@@ -75,7 +75,9 @@
   var clearBtn = document.getElementById("searchClear");
   var status = document.getElementById("searchStatus");
   var articles = Array.prototype.slice.call(document.querySelectorAll(".term"));
-  var tocLinks = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
+  var tocLinks = Array.prototype.slice.call(
+    document.querySelectorAll(".toc li a")
+  );
   var tocGroups = Array.prototype.slice.call(document.querySelectorAll(".toc-group"));
   var sections = Array.prototype.slice.call(document.querySelectorAll(".group"));
 

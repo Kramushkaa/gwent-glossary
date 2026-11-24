@@ -16,9 +16,8 @@
 <header class="topbar">
   <button class="toc-toggle" id="tocToggle" aria-controls="sidebar" aria-expanded="false">
     <span class="toc-toggle-bars" aria-hidden="true"></span>
-    <span class="toc-toggle-label">Оглавление</span>
-  </button>
-  <div class="search-wrap">
+    <span class="toc-toggle-label">Указатель</span>
+  </button>  <div class="search-wrap">
     <input type="search" id="search" placeholder="Поиск по термину или определению…"
            aria-label="Поиск по глоссарию" autocomplete="off" spellcheck="false">
     <button class="search-clear" id="searchClear" aria-label="Очистить поиск" hidden>×</button>
@@ -30,9 +29,9 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-inner">
       <p class="sidebar-status" id="searchStatus" hidden></p>
-      <nav class="toc" aria-label="Оглавление">
-<p class="toc-title">Оглавление</p>
-<div class="toc-group" data-group="А"><p class="toc-letter">А</p><ul>
+      <nav class="toc" aria-label="Алфавитный указатель">
+<p class="toc-title">Указатель</p>
+<div class="toc-group" data-letter="А"><p class="toc-letter"><a href="#letter-a">А</a></p><ul>
 <li><a href="#abilka" data-slug="abilka">Абилка</a></li>
 <li><a href="#abuz" data-slug="abuz">Абуз</a></li>
 <li><a href="#adrenalin" data-slug="adrenalin">Адреналин</a></li>
@@ -49,24 +48,24 @@
 <li><a href="#afk-afk" data-slug="afk-afk">АФК (АFK)</a></li>
 <li><a href="#achivka" data-slug="achivka">Ачивка</a></li>
 </ul></div>
-<div class="toc-group" data-group="Б"><p class="toc-letter">Б</p><ul>
+<div class="toc-group" data-letter="Б"><p class="toc-letter"><a href="#letter-b">Б</a></p><ul>
 <li><a href="#bait" data-slug="bait">Байт</a></li>
 <li><a href="#balansirovka" data-slug="balansirovka">Балансировка</a></li>
 <li><a href="#barrikada" data-slug="barrikada">Баррикада</a></li>
 <li><a href="#baunti" data-slug="baunti">Баунти</a></li>
 <li><a href="#baff" data-slug="baff">Бафф</a></li>
-<li><a href="#belki" data-slug="belki">Белки</a></li>
 <li><a href="#bezumie" data-slug="bezumie">Безумие</a></li>
+<li><a href="#belki" data-slug="belki">Белки</a></li>
 <li><a href="#berserk" data-slug="berserk">Берсерк</a></li>
 <li><a href="#blid" data-slug="blid">Блид</a></li>
 <li><a href="#blokirovka" data-slug="blokirovka">Блокировка</a></li>
-<li><a href="#bochki" data-slug="bochki">Бочки</a></li>
 <li><a href="#bm" data-slug="bm">БМ</a></li>
+<li><a href="#bochki" data-slug="bochki">Бочки</a></li>
 <li><a href="#bresh" data-slug="bresh">Брешь</a></li>
 <li><a href="#brik" data-slug="brik">Брик</a></li>
 <li><a href="#bronia" data-slug="bronia">Броня</a></li>
 </ul></div>
-<div class="toc-group" data-group="В–Г"><p class="toc-letter">В–Г</p><ul>
+<div class="toc-group" data-letter="В"><p class="toc-letter"><a href="#letter-v">В</a></p><ul>
 <li><a href="#veil" data-slug="veil">Вейл</a></li>
 <li><a href="#veliu" data-slug="veliu">Велью</a></li>
 <li><a href="#verolomstvo" data-slug="verolomstvo">Вероломство</a></li>
@@ -84,6 +83,8 @@
 <li><a href="#vygoda" data-slug="vygoda">Выгода</a></li>
 <li><a href="#vyderzhka" data-slug="vyderzhka">Выдержка</a></li>
 <li><a href="#vynoslivost" data-slug="vynoslivost">Выносливость</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Г"><p class="toc-letter"><a href="#letter-g">Г</a></p><ul>
 <li><a href="#garmoniia" data-slug="garmoniia">Гармония</a></li>
 <li><a href="#gvintfiniti-gwentfinity" data-slug="gvintfiniti-gwentfinity">Гвинтфинити (GWENTFINITY)</a></li>
 <li><a href="#gg-gg" data-slug="gg-gg">ГГ (GG)</a></li>
@@ -93,7 +94,7 @@
 <li><a href="#gospodin-zerkalo" data-slug="gospodin-zerkalo">Господин Зеркало</a></li>
 <li><a href="#gratsiia" data-slug="gratsiia">Грация</a></li>
 </ul></div>
-<div class="toc-group" data-group="Д"><p class="toc-letter">Д</p><ul>
+<div class="toc-group" data-letter="Д"><p class="toc-letter"><a href="#letter-d">Д</a></p><ul>
 <li><a href="#damag" data-slug="damag">Дамаг</a></li>
 <li><a href="#dan" data-slug="dan">Дань</a></li>
 <li><a href="#dvizhok" data-slug="dvizhok">Движок</a></li>
@@ -112,20 +113,26 @@
 <li><a href="#draft" data-slug="draft">Драфт</a></li>
 <li><a href="#duel" data-slug="duel">Дуэль</a></li>
 </ul></div>
-<div class="toc-group" data-group="Е–И"><p class="toc-letter">Е–И</p><ul>
+<div class="toc-group" data-letter="Е"><p class="toc-letter"><a href="#letter-e">Е</a></p><ul>
 <li><a href="#ezhednevnoe-zadanie" data-slug="ezhednevnoe-zadanie">Ежедневное задание</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Ж"><p class="toc-letter"><a href="#letter-zh">Ж</a></p><ul>
 <li><a href="#zhazhda-krovi" data-slug="zhazhda-krovi">Жажда крови</a></li>
 <li><a href="#zheleznaia-volia" data-slug="zheleznaia-volia">Железная воля</a></li>
+</ul></div>
+<div class="toc-group" data-letter="З"><p class="toc-letter"><a href="#letter-z">З</a></p><ul>
 <li><a href="#zaveshchanie" data-slug="zaveshchanie">Завещание</a></li>
 <li><a href="#zagovor" data-slug="zagovor">Заговор</a></li>
 <li><a href="#zadeistvovanie" data-slug="zadeistvovanie">Задействование</a></li>
+<li><a href="#zakrytyi-beta-test-zbt" data-slug="zakrytyi-beta-test-zbt">Закрытый бета-тест (ЗБТ)</a></li>
 <li><a href="#zariady" data-slug="zariady">Заряды</a></li>
 <li><a href="#zasada" data-slug="zasada">Засада</a></li>
 <li><a href="#zaspam" data-slug="zaspam">Заспам</a></li>
 <li><a href="#zakhvatite" data-slug="zakhvatite">Захватите</a></li>
 <li><a href="#zashchitnik" data-slug="zashchitnik">Защитник</a></li>
-<li><a href="#zakrytyi-beta-test-zbt" data-slug="zakrytyi-beta-test-zbt">Закрытый бета-тест (ЗБТ)</a></li>
 <li><a href="#zerkalo" data-slug="zerkalo">Зеркало</a></li>
+</ul></div>
+<div class="toc-group" data-letter="И"><p class="toc-letter"><a href="#letter-i">И</a></p><ul>
 <li><a href="#ivent" data-slug="ivent">Ивент</a></li>
 <li><a href="#iznachalnaia-koloda" data-slug="iznachalnaia-koloda">Изначальная колода</a></li>
 <li><a href="#imba" data-slug="imba">Имба</a></li>
@@ -133,7 +140,7 @@
 <li><a href="#istoshchite" data-slug="istoshchite">Истощите</a></li>
 <li><a href="#istselite" data-slug="istselite">Исцелите</a></li>
 </ul></div>
-<div class="toc-group" data-group="К"><p class="toc-letter">К</p><ul>
+<div class="toc-group" data-letter="К"><p class="toc-letter"><a href="#letter-k">К</a></p><ul>
 <li><a href="#kalibrovka" data-slug="kalibrovka">Калибровка</a></li>
 <li><a href="#kambek" data-slug="kambek">Камбэк</a></li>
 <li><a href="#kataklizm" data-slug="kataklizm">Катаклизм</a></li>
@@ -144,21 +151,21 @@
 <li><a href="#kki" data-slug="kki">ККИ</a></li>
 <li><a href="#kladbishche" data-slug="kladbishche">Кладбище</a></li>
 <li><a href="#kniga-nagrad" data-slug="kniga-nagrad">Книга наград</a></li>
-<li><a href="#konsid" data-slug="konsid">Консид</a></li>
 <li><a href="#kompetitiv" data-slug="kompetitiv">Компетитив</a></li>
+<li><a href="#konsid" data-slug="konsid">Консид</a></li>
 <li><a href="#konstruktor-kolod" data-slug="konstruktor-kolod">Конструктор колод</a></li>
 <li><a href="#kontrakt" data-slug="kontrakt">Контракт</a></li>
-<li><a href="#kosmetika" data-slug="kosmetika">Косметика</a></li>
 <li><a href="#kontrol" data-slug="kontrol">Контроль</a></li>
+<li><a href="#kosmetika" data-slug="kosmetika">Косметика</a></li>
 <li><a href="#kraun-pointy" data-slug="kraun-pointy">Краун Поинты</a></li>
 <li><a href="#krovavaia-luna" data-slug="krovavaia-luna">Кровавая луна</a></li>
-<li><a href="#krovotechenie" data-slug="krovotechenie">Кровотечение</a></li>
 <li><a href="#krovnaia-vrazhda-kv" data-slug="krovnaia-vrazhda-kv">Кровная Вражда (КВ)</a></li>
+<li><a href="#krovotechenie" data-slug="krovotechenie">Кровотечение</a></li>
 <li><a href="#krony" data-slug="krony">Кроны</a></li>
 <li><a href="#kuldaun" data-slug="kuldaun">Кулдаун</a></li>
 <li><a href="#kuptsy-iz-ofira" data-slug="kuptsy-iz-ofira">Купцы из Офира</a></li>
 </ul></div>
-<div class="toc-group" data-group="Л–М"><p class="toc-letter">Л–М</p><ul>
+<div class="toc-group" data-letter="Л"><p class="toc-letter"><a href="#letter-l">Л</a></p><ul>
 <li><a href="#ladder" data-slug="ladder">Ладдер</a></li>
 <li><a href="#last-sei" data-slug="last-sei">Ласт сей</a></li>
 <li><a href="#lider" data-slug="lider">Лидер</a></li>
@@ -166,6 +173,8 @@
 <li><a href="#lovushka" data-slug="lovushka">Ловушка</a></li>
 <li><a href="#lok" data-slug="lok">Лок</a></li>
 <li><a href="#lou-rang" data-slug="lou-rang">Лоу-ранг</a></li>
+</ul></div>
+<div class="toc-group" data-letter="М"><p class="toc-letter"><a href="#letter-m">М</a></p><ul>
 <li><a href="#masters" data-slug="masters">Мастерс</a></li>
 <li><a href="#matchap" data-slug="matchap">Матчап</a></li>
 <li><a href="#mesto" data-slug="mesto">Место</a></li>
@@ -182,13 +191,15 @@
 <li><a href="#moroz" data-slug="moroz">Мороз</a></li>
 <li><a href="#mulligan" data-slug="mulligan">Муллиган</a></li>
 </ul></div>
-<div class="toc-group" data-group="Н–О"><p class="toc-letter">Н–О</p><ul>
+<div class="toc-group" data-letter="Н"><p class="toc-letter"><a href="#letter-n">Н</a></p><ul>
 <li><a href="#nagrada-za-golovu" data-slug="nagrada-za-golovu">Награда за голову</a></li>
 <li><a href="#nastoi" data-slug="nastoi">Настой</a></li>
+<li><a href="#nyorf" data-slug="nyorf">Нёрф</a></li>
 <li><a href="#neuiazvimost" data-slug="neuiazvimost">Неуязвимость</a></li>
-<li><a href="#nerf" data-slug="nerf">Нёрф</a></li>
 <li><a href="#novigrad" data-slug="novigrad">Новиград</a></li>
 <li><a href="#nouiunit" data-slug="nouiunit">Ноуюнит</a></li>
+</ul></div>
+<div class="toc-group" data-letter="О"><p class="toc-letter"><a href="#letter-o">О</a></p><ul>
 <li><a href="#obrechennost" data-slug="obrechennost">Обреченность</a></li>
 <li><a href="#obryvki" data-slug="obryvki">Обрывки</a></li>
 <li><a href="#obt" data-slug="obt">ОБТ</a></li>
@@ -200,12 +211,12 @@
 <li><a href="#ochki-koron" data-slug="ochki-koron">Очки корон</a></li>
 <li><a href="#ochki-nagrad-on" data-slug="ochki-nagrad-on">Очки наград (ОН)</a></li>
 </ul></div>
-<div class="toc-group" data-group="П"><p class="toc-letter">П</p><ul>
-<li><a href="#partner" data-slug="partner">Партнёр</a></li>
+<div class="toc-group" data-letter="П"><p class="toc-letter"><a href="#letter-p">П</a></p><ul>
+<li><a href="#partnyor" data-slug="partnyor">Партнёр</a></li>
 <li><a href="#passivnaia-sposobnost" data-slug="passivnaia-sposobnost">Пассивная способность</a></li>
 <li><a href="#patch" data-slug="patch">Патч</a></li>
 <li><a href="#pikreit" data-slug="pikreit">Пикрейт</a></li>
-<li><a href="#platezh" data-slug="platezh">Платёж</a></li>
+<li><a href="#platyozh" data-slug="platyozh">Платёж</a></li>
 <li><a href="#poverkrip" data-slug="poverkrip">Поверкрип</a></li>
 <li><a href="#poglotit" data-slug="poglotit">Поглотить</a></li>
 <li><a href="#pogoda" data-slug="pogoda">Погода</a></li>
@@ -217,17 +228,17 @@
 <li><a href="#prevoskhodstvo" data-slug="prevoskhodstvo">Превосходство</a></li>
 <li><a href="#predannost" data-slug="predannost">Преданность</a></li>
 <li><a href="#prestizh" data-slug="prestizh">Престиж</a></li>
-<li><a href="#prikaz" data-slug="prikaz">Приказ</a></li>
 <li><a href="#prizvat" data-slug="prizvat">Призвать</a></li>
-<li><a href="#pro-rang" data-slug="pro-rang">Про ранг</a></li>
+<li><a href="#prikaz" data-slug="prikaz">Приказ</a></li>
 <li><a href="#proviziia-provka" data-slug="proviziia-provka">Провизия (Провка)</a></li>
 <li><a href="#prokat" data-slug="prokat">Прокать</a></li>
-<li><a href="#prokliatie-chernogo-solntsa" data-slug="prokliatie-chernogo-solntsa">Проклятие Чёрного Солнца</a></li>
+<li><a href="#prokliatie-chyornogo-solntsa" data-slug="prokliatie-chyornogo-solntsa">Проклятие Чёрного Солнца</a></li>
 <li><a href="#prokrutka" data-slug="prokrutka">Прокрутка</a></li>
+<li><a href="#pro-rang" data-slug="pro-rang">Про ранг</a></li>
 <li><a href="#puteshestvie" data-slug="puteshestvie">Путешествие</a></li>
 <li><a href="#put-vedmaka" data-slug="put-vedmaka">Путь Ведьмака</a></li>
 </ul></div>
-<div class="toc-group" data-group="Р"><p class="toc-letter">Р</p><ul>
+<div class="toc-group" data-letter="Р"><p class="toc-letter"><a href="#letter-r">Р</a></p><ul>
 <li><a href="#razmeshchenie" data-slug="razmeshchenie">Размещение</a></li>
 <li><a href="#rangi" data-slug="rangi">Ранги</a></li>
 <li><a href="#random" data-slug="random">Рандом</a></li>
@@ -244,33 +255,33 @@
 <li><a href="#rukopashnyi-riad" data-slug="rukopashnyi-riad">Рукопашный ряд</a></li>
 <li><a href="#riady" data-slug="riady">Ряды</a></li>
 </ul></div>
-<div class="toc-group" data-group="С"><p class="toc-letter">С</p><ul>
+<div class="toc-group" data-letter="С"><p class="toc-letter"><a href="#letter-s">С</a></p><ul>
 <li><a href="#sberezhenie" data-slug="sberezhenie">Сбережение</a></li>
 <li><a href="#sbros" data-slug="sbros">Сброс</a></li>
 <li><a href="#sbrosit" data-slug="sbrosit">Сбросить</a></li>
 <li><a href="#sezon" data-slug="sezon">Сезон</a></li>
 <li><a href="#setap" data-slug="setap">Сетап</a></li>
-<li><a href="#simvol" data-slug="simvol">Символ</a></li>
 <li><a href="#sila-otriada" data-slug="sila-otriada">Сила отряда</a></li>
 <li><a href="#simbioz" data-slug="simbioz">Симбиоз</a></li>
+<li><a href="#simvol" data-slug="simvol">Символ</a></li>
 <li><a href="#sinergiia" data-slug="sinergiia">Синергия</a></li>
 <li><a href="#sozdaite" data-slug="sozdaite">Создайте</a></li>
 <li><a href="#son-drakona" data-slug="son-drakona">Сон дракона</a></li>
 <li><a href="#sotvorite" data-slug="sotvorite">Сотворите</a></li>
-<li><a href="#spender" data-slug="spender">Спендер</a></li>
 <li><a href="#spell" data-slug="spell">Спелл</a></li>
+<li><a href="#spender" data-slug="spender">Спендер</a></li>
 <li><a href="#srodstvo" data-slug="srodstvo">Сродство</a></li>
 <li><a href="#status" data-slug="status">Статус</a></li>
 <li><a href="#stoimost-naima" data-slug="stoimost-naima">Стоимость найма</a></li>
 <li><a href="#stoikost" data-slug="stoikost">Стойкость</a></li>
 <li><a href="#stolknovenie" data-slug="stolknovenie">Столкновение</a></li>
 <li><a href="#stratagem" data-slug="stratagem">Стратагем</a></li>
-<li><a href="#strategicheskii-priem-sp" data-slug="strategicheskii-priem-sp">Стратегический приём (СП)</a></li>
+<li><a href="#strategicheskii-priyom-sp" data-slug="strategicheskii-priyom-sp">Стратегический приём (СП)</a></li>
 <li><a href="#stroi" data-slug="stroi">Строй</a></li>
 <li><a href="#skhvatka" data-slug="skhvatka">Схватка</a></li>
 <li><a href="#stsenarii" data-slug="stsenarii">Сценарий</a></li>
 </ul></div>
-<div class="toc-group" data-group="Т"><p class="toc-letter">Т</p><ul>
+<div class="toc-group" data-letter="Т"><p class="toc-letter"><a href="#letter-t">Т</a></p><ul>
 <li><a href="#taimer" data-slug="taimer">Таймер</a></li>
 <li><a href="#takticheskoe-preimushchestvo-ta" data-slug="takticheskoe-preimushchestvo-ta">Тактическое Преимущество (ТА)</a></li>
 <li><a href="#tvig-twig" data-slug="tvig-twig">ТВИГ (TWIG)</a></li>
@@ -287,30 +298,48 @@
 <li><a href="#tuman" data-slug="tuman">Туман</a></li>
 <li><a href="#tutor" data-slug="tutor">Тутор</a></li>
 </ul></div>
-<div class="toc-group" data-group="У–Я"><p class="toc-letter">У–Я</p><ul>
+<div class="toc-group" data-letter="У"><p class="toc-letter"><a href="#letter-u">У</a></p><ul>
 <li><a href="#udalit" data-slug="udalit">Удалить</a></li>
 <li><a href="#unichtozhit" data-slug="unichtozhit">Уничтожить</a></li>
 <li><a href="#ustrashenie" data-slug="ustrashenie">Устрашение</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Ф"><p class="toc-letter"><a href="#letter-f">Ф</a></p><ul>
 <li><a href="#fiks" data-slug="fiks">Фикс</a></li>
 <li><a href="#filler" data-slug="filler">Филлер</a></li>
 <li><a href="#finisher" data-slug="finisher">Финишер</a></li>
 <li><a href="#fitilit" data-slug="fitilit">Фитилить</a></li>
 <li><a href="#fraktsiia" data-slug="fraktsiia">Фракция</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Х"><p class="toc-letter"><a href="#letter-kh">Х</a></p><ul>
 <li><a href="#khairoll" data-slug="khairoll">Хайролл</a></li>
 <li><a href="#khishchnik" data-slug="khishchnik">Хищник</a></li>
 <li><a href="#khodov-do-vosstanovleniia" data-slug="khodov-do-vosstanovleniia">Ходов до восстановления</a></li>
 <li><a href="#khoumkaming" data-slug="khoumkaming">Хоумкаминг</a></li>
 <li><a href="#khendbaff" data-slug="khendbaff">Хэндбафф</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Ц"><p class="toc-letter"><a href="#letter-ts">Ц</a></p><ul>
 <li><a href="#tsvet-karty" data-slug="tsvet-karty">Цвет карты</a></li>
 <li><a href="#tsena-mogushchestva" data-slug="tsena-mogushchestva">Цена Могущества</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Ч"><p class="toc-letter"><a href="#letter-ch">Ч</a></p><ul>
 <li><a href="#chellendzher" data-slug="chellendzher">Челленджер</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Ш"><p class="toc-letter"><a href="#letter-sh">Ш</a></p><ul>
 <li><a href="#shabash" data-slug="shabash">Шабаш</a></li>
-<li><a href="#shnuroder" data-slug="shnuroder">Шнуродёр</a></li>
+<li><a href="#shnurodyor" data-slug="shnurodyor">Шнуродёр</a></li>
 <li><a href="#shpion" data-slug="shpion">Шпион</a></li>
 <li><a href="#shtorm" data-slug="shtorm">Шторм</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Щ"><p class="toc-letter"><a href="#letter-shch">Щ</a></p><ul>
 <li><a href="#shchit" data-slug="shchit">Щит</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Э"><p class="toc-letter"><a href="#letter-e-2">Э</a></p><ul>
 <li><a href="#ekho" data-slug="ekho">Эхо</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Ю"><p class="toc-letter"><a href="#letter-iu">Ю</a></p><ul>
 <li><a href="#iunit" data-slug="iunit">Юнит</a></li>
+</ul></div>
+<div class="toc-group" data-letter="Я"><p class="toc-letter"><a href="#letter-ia">Я</a></p><ul>
 <li><a href="#iad" data-slug="iad">Яд</a></li>
 </ul></div>
 </nav>
@@ -324,10 +353,10 @@
         Термины, игровые механики, архетипы и жаргон сообщества карточной игры GWENT.
         Собрано из вики-страниц сообщества Claymore во «ВКонтакте».
       </p>
-      <p class="meta">255 терминов · 13 разделов</p>
+      <p class="meta">255 терминов · 28 букв</p>
     </header>
 
-    <section class="group" id="group-1" data-group="А"><h2 class="group-title">А</h2>
+    <section class="group" id="letter-a" data-letter="А"><h2 class="group-title">А</h2>
 <article class="term" id="abilka"><h3 class="term-title">Абилка</h3><div class="term-body"><p>Абилка (разг., от англ. ability – способность) может употребляться в нескольких значениях:</p>
 <ol><li>Абилка (лидера) — уникальная способность фракции, которую игрок в течение матча может использовать один или более раз. Каждая абилка лидера увеличивает максимальную стоимость найма для колоды на определённое значение. Чаще всего именно абилка лидера определяет особенности построения вокруг неё всей колоды.</li><li>Способность карты.</li></ol></div></article>
 <article class="term" id="abuz"><h3 class="term-title">Абуз</h3><div class="term-body"><p>Абуз (разг., от англ. abuse – злоупотреблять) – намеренное многократное использование ошибок (багов) игры с целью получения преимущества над противником. Абуз багов является нарушением правил игры, а уличённый в этом игрок — абузер — может быть наказан по усмотрению разработчиков. Иногда (но не совсем верно!) термин может употребляться для обозначения намеренного многократного использования одной и той же сильной карты. В случае, если сильный эффект карты "запланирован" разработчиками и не является следствием ошибки разработки, подобные действия не являются абузом в полном истинном смысле этого термина и правил не нарушают.</p></div></article>
@@ -358,22 +387,22 @@
 <p>Условные сокращения:</p>
 <ol><li>оф. – официальный – термин, непосредственно встречающийся в ГВИНТе в описаниях карт, способностей, режимах, внутриигровом магазине и т.д.</li><li>разг. – разговорный – игровой фразеологизм, устойчивое сокращение, жаргонизм или иное выражение, принятое в среде гвинтёров для обозначения игровых ситуаций и элементов геймплея.</gray></li></ol></div></article>
 </section>
-<section class="group" id="group-2" data-group="Б"><h2 class="group-title">Б</h2>
+<section class="group" id="letter-b" data-letter="Б"><h2 class="group-title">Б</h2>
 <article class="term" id="bait"><h3 class="term-title">Байт</h3><div class="term-body"><p>Байт (разг., от англ. bait – приманка, дразнить) – обманное действие, заставляющее оппонента отдать важные карты.</p></div></article>
 <article class="term" id="balansirovka"><h3 class="term-title">Балансировка</h3><div class="term-body"><p>Балансировка – процесс изменения разработчиками силы или эффектов карт, а также <a href="#abilka">абилок</a> лидеров. Основная цель балансировки – изменить расстановку сил в игре (текущую мету) для поддержания интереса игроков и стимулирования их к созданию новых, отличных от предыдущих колод. Усиление карт/абилок называется <a href="#baff">баффом</a> (апом), а уменьшение – нёрфом.</p></div></article>
 <article class="term" id="barrikada"><h3 class="term-title">Баррикада</h3><div class="term-body"><p>Баррикада (оф., англ. barricade) – игровая механика. Способность, описанная после слова "Баррикада" сработает только в том случае, если у отряда имеется <a href="#bronia">броня</a>.</p></div></article>
 <article class="term" id="baunti"><h3 class="term-title">Баунти</h3><div class="term-body"><p>Баунти (разг., от англ. bounty – вознаграждение) – синоним статуса "Награда за голову". Фраза "навесить баунти" означает дать отряду статус "Награда за голову".</p></div></article>
 <article class="term" id="baff"><h3 class="term-title">Бафф</h3><div class="term-body"><p>Бафф (разг., от англ. to buff – полировать) – усиление. Может применяться:</p>
 <ol><li>В значении балансировки для обозначения улучшения характеристик карты (синоним – <a href="#ap">ап</a>). Антоним баффа в этом варианте – "нёрф".</li><li>В контексте игрового процесса для обозначения увеличения силы карты. Антоним баффа в этом случае – "дамаг".</li></ol></div></article>
-<article class="term" id="belki"><h3 class="term-title">Белки</h3><div class="term-body"><p>Бéлки – неофициальное название фракции "Скоя’таэли". Сам термин применительно к данной фракции берёт своё начало из оригинальной книжной серии, где белками называли партизан-нелюдей за их обыкновение носить на шапках беличьи хвосты.</p></div></article>
 <article class="term" id="bezumie"><h3 class="term-title">Безумие</h3><div class="term-body"><p>Безумие (оф., англ. insanity) – уникальная механика Синдиката. Когда у отряда есть ключевое слово "Безумие", то если у вас не хватает монет для активации способности "Платёж" этого отряда, вы всё равно можете активировать способность. При этом отряду будет нанесён урон, равный необходимому платежу, игнорируя броню. Нельзя активировать Безумие, если это уничтожит отряд или не нанесёт ему урона (то есть, если у него есть щит или карта находится под защитой карты Сукрус, блокирующей урон).</p></div></article>
+<article class="term" id="belki"><h3 class="term-title">Белки</h3><div class="term-body"><p>Бéлки – неофициальное название фракции "Скоя’таэли". Сам термин применительно к данной фракции берёт своё начало из оригинальной книжной серии, где белками называли партизан-нелюдей за их обыкновение носить на шапках беличьи хвосты.</p></div></article>
 <article class="term" id="berserk"><h3 class="term-title">Берсерк</h3><div class="term-body"><p>Берсерк (оф., англ. berserk) – уникальная механика Скеллиге. Способность, описанная после слова "Берсерк N" сработает только если здоровье отряда меньше или равно N.</p></div></article>
 <article class="term" id="blid"><h3 class="term-title">Блид</h3><div class="term-body"><p>Блид (разг., от англ. bleed – истекать кровью) – более мягкая и не столь агрессивная разновидность пуша. Стратегия второго раунда, когда при выигранном первом раунде играешь не очень важные для себя карты, тем самым выманивая у соперника более ценные.</p></div></article>
 <article class="term" id="blokirovka"><h3 class="term-title">Блокировка</h3><div class="term-body"><p>Блокировка (оф., англ. lock) – игровая механика. Карты со словом "Заблокируйте" могут добавлять отрядам статус "Блокировки". Этот статус отменяет все способности отряда — как пассивные, так и активируемые. Блокировку можно снять эффектом очищения. Важно помнить, что блокировка НЕ может отменить эффект иных статусов (стойкость, защитник, выносливость и т.п. не отменяются блокировкой!).</p>
 <figure class="term-figure caption-only"><figcaption>Символ статуса "Блокировка"</figcaption></figure></div></article>
+<article class="term" id="bm"><h3 class="term-title">БМ</h3><div class="term-body"><p>БМ (разг., от англ. bad manners – плохие манеры) – проявление неуважения к оппоненту через намеренное затягивание хода (иначе это называется "душить фитиль"), спам эмоциями лидера, показ несыгранных карт при огромном перевесе в финальном раунде, уход в <a href="#afk-afk">АФК</a>, шнуродёрство и т.п.</p></div></article>
 <article class="term" id="bochki"><h3 class="term-title">Бочки</h3><div class="term-body"><p>Бочки (оф., aнгл. kegs) – основной источник карт в ГВИНТе: каждая бочка содержит 5 карт, 4 из которых выпадают независимо от игрока, а последнюю можно выбрать из трех предложенных. Существуют различные виды бочек: Улучшенные (с картами всех фракций), Фракционные, Бочки Дополнений. Бочки делятся на Базовые, содержащие, в основном, не премиальные (не анимированные) версии карт, и Премиальные, все карты в которых анимированы.</p>
 <figure class="term-figure caption-only"><figcaption>Премиальные бочки в ГВИНТе</figcaption></figure></div></article>
-<article class="term" id="bm"><h3 class="term-title">БМ</h3><div class="term-body"><p>БМ (разг., от англ. bad manners – плохие манеры) – проявление неуважения к оппоненту через намеренное затягивание хода (иначе это называется "душить фитиль"), спам эмоциями лидера, показ несыгранных карт при огромном перевесе в финальном раунде, уход в <a href="#afk-afk">АФК</a>, шнуродёрство и т.п.</p></div></article>
 <article class="term" id="bresh"><h3 class="term-title">Брешь</h3><div class="term-body"><p>Брешь (оф., англ. rupture) – статус. Отряд с Брешью получает урон, равный своей изначальной силе в конце хода того игрока, в чьем распоряжении он находится. После этого статус исчезает.</p>
 <figure class="term-figure caption-only"><figcaption>Отряду добавлена Брешь. Если статус не будет очищен, то в конце хода Тибору будет нанесёно 13 ед. урона</figcaption></figure></div></article>
 <article class="term" id="brik"><h3 class="term-title">Брик</h3><div class="term-body"><p>Брик (разг., от англ. brick – кирпич) – карта, которая сыграет слабее, чем ожидалось изначально. Обычно речь идёт о картах, взаимодействующих с колодой: отряды, призывающие свои копии из колоды будут являться бриками, если в колоде не будет карт, которые можно призвать. Отряды, играющие особую карту из колоды станут бриками, если в колоде не останется особых карт и т.п.</p></div></article>
@@ -382,7 +411,7 @@
 <p>Условные сокращения:</p>
 <ol><li>оф. – официальный – термин, непосредственно встречающийся в ГВИНТе в описаниях карт, способностей, режимах, внутриигровом магазине и т.д.</li><li>разг. – разговорный – игровой фразеологизм, устойчивое сокращение, жаргонизм или иное выражение, принятое в среде гвинтёров для обозначения игровых ситуаций и элементов геймплея.</gray></li></ol></div></article>
 </section>
-<section class="group" id="group-3" data-group="В–Г"><h2 class="group-title">В–Г</h2>
+<section class="group" id="letter-v" data-letter="В"><h2 class="group-title">В</h2>
 <article class="term" id="veil"><h3 class="term-title">Вейл</h3><div class="term-body"><p>Вейл (с англ. veil — вуаль) — разговорное название статуса "Покров".</p></div></article>
 <article class="term" id="veliu"><h3 class="term-title">Велью</h3><div class="term-body"><p>Велью (разг., от англ. value – выгода) – уровень полезности карты относительно возможных с ней синергий и сложившейся на поле ситуации. Любая карта имеет свой базовый потенциал, определяющийся по тому, на сколько очков она максимально может сыграть за свою провизию при самостоятельной игре (т.е. в отрыве от синергий). Однако, в зависимости от особенностей колоды, текущей обстановки на поле и хода игры велью карт может как значительно повышаться – если существует возможность усилить эффект розыгрыша карты за счёт её взаимодействия с другими картами; так и стремиться к нулю – если потенциально сильная карта, к примеру, станет <a href="#brik">бриком</a> или будет законтрена раньше, чем реализует свои базовые возможности. Расчёт истинного велью карты достаточно ситуативен и в какой-то степени весьма субъективен и зависит от очень большого числа факторов, опыта игрока и непосредственно применяемого способа расчёта.</p></div></article>
 <article class="term" id="verolomstvo"><h3 class="term-title">Вероломство</h3><div class="term-body"><p>Вероломство (оф., англ. disloyal – нелояльный) – ключевое слово, обозначающее, что отряд может быть сыгран только на стороне противника.</p></div></article>
@@ -402,6 +431,8 @@
 <article class="term" id="vygoda"><h3 class="term-title">Выгода</h3><div class="term-body"><p>Выгода (оф., англ. profit) – уникальная механика Синдиката. Означает, что при розыгрыше этого отряда, вы получите количество монет, указанное в описании способности.</p></div></article>
 <article class="term" id="vyderzhka"><h3 class="term-title">Выдержка</h3><div class="term-body"><p>Выдержка (оф., англ. patience) – уникальная механика Королевств Севера. Пока карта с Выдержкой находится на поле, значение, указанное в квадратных скобах этой карты будет увеличиваться на 1. Это значение сохраняется при уходе этой карты в сброс. Если накопление Выдержки зависит от ряда, в котором находится отряд, то перемещении этого отряда в другой ряд, выдержка увеличиваться не будет. Пример: "Ученик из Бан-Арда".</p></div></article>
 <article class="term" id="vynoslivost"><h3 class="term-title">Выносливость</h3><div class="term-body"><p>Выносливость (оф., англ. vitality – жизнеспособность) – отряд со статусом "Выносливость" будет усиливаться на 1 в конце хода игрока, на чьей стороне стоит отряд с Выносливостью. Цифра на значке статуса означает продолжительность действия статуса (количество ходов). Добавление выносливости к отряду, у которого уже есть этот статус, увеличит общую продолжительность статуса. Выносливость противоположна кровотечению – 1 ход выносливости отменяет 1 ход кровотечения и наоборот. Статусы срабатывают после срабатывания пассивных способностей карт.</p></div></article>
+</section>
+<section class="group" id="letter-g" data-letter="Г"><h2 class="group-title">Г</h2>
 <article class="term" id="garmoniia"><h3 class="term-title">Гармония</h3><div class="term-body"><p>Гармония (оф., англ. harmony) – уникальная механика Скоя’таэлей. Отряд со словом "Гармония" усиливается на 1 или на указанное значение каждый раз, когда вы разыгрываете отряд Скоя’таэлей с основной категорией (тегом), которой еще нет на вашей стороне поля. Такими категориями являются: Ведьмак, Гном, Дракон, Древень, Дриада, Зверь, Краснолюд, Реликт, Человек, Эльф. "Гармошка" – разговорное название механики Гармонии и одноимённого малого архетипа, ядром которого являются именно карты с ключевым словом "Гармония".</p></div></article>
 <article class="term" id="gvintfiniti-gwentfinity"><h3 class="term-title">Гвинтфинити (GWENTFINITY)</h3><div class="term-body"><p class="empty">Определение пока не добавлено.</p></div></article>
 <article class="term" id="gg-gg"><h3 class="term-title">ГГ (GG)</h3><div class="term-body"><p>ГГ (оф., от англ. good game – хорошая игра) – после окончания партии противника можно поблагодарить за игру, нажав на кнопку GG – это даст ему немного ресурсов. В качестве ресурсов за благодарность от противника можно получить железную руду и обрывки, а более опытные игроки с высоким уровнем престижа могут также дополнительно получать очки наград и метеоритную пыль.</p></div></article>
@@ -411,7 +442,7 @@
 <article class="term" id="gospodin-zerkalo"><h3 class="term-title">Господин Зеркало</h3><div class="term-body"><p>Господин Зеркало (оф., англ. Master Mirror) – пятое дополнение ГВИНТа, вышедшее 30 июня 2020 года. Дополнение привнесло в игру такие новые механики как Преданность, Эхо, Сродство, Ветеран, Брешь, Покров и Заговор. Дополнение также примечательно тем, что в игру впервые были введены динамические карты. Заглавным персонажем дополнения является Гюнтер о’Дим.</p></div></article>
 <article class="term" id="gratsiia"><h3 class="term-title">Грация</h3><div class="term-body"><p>Грация (оф., англ. grace) — уникальная механика Королевств Севера. Активируется один раз, когда сила этого отряда становится больше указанного значения или равна ему. Если условие выполняется при появлении отряда на поле, активируется немедленно.</p></div></article>
 </section>
-<section class="group" id="group-4" data-group="Д"><h2 class="group-title">Д</h2>
+<section class="group" id="letter-d" data-letter="Д"><h2 class="group-title">Д</h2>
 <article class="term" id="damag"><h3 class="term-title">Дамаг</h3><div class="term-body"><p>Дамаг (разг., от англ. damage – повреждение) – урон, наносимый отряду любым источником и приводящий к понижению силы карты или её полному уничтожению, когда сила опустится до нуля. В качестве источников урона могут выступать: способности лидера, иные отряды или даже сам отряд, которому наносится урон, а также особые карты и артефакты. Выражение "дамажить", значит, "наносить урон". Смысловым антонимом “дамага” можно считать "<a href="#baff">бафф</a>".</p></div></article>
 <article class="term" id="dan"><h3 class="term-title">Дань</h3><div class="term-body"><p>Дань (оф., англ. tribute – дань) – уникальная механика фракции Синдикат. Способность, описанная после слова "Дань N" будет активирована только если при розыгрыше этой карты вы решите заплатить N монет. Если же вы откажетесь платить дань, либо у вас недостаточно монет для её активации, то эта способность не будет активирована, но сама карта при этом разыграется.</p></div></article>
 <article class="term" id="dvizhok"><h3 class="term-title">Движок</h3><div class="term-body"><p>Движок (разг., от англ. engine – двигатель) – выставленные на поле карты отрядов, увеличивающие свою ценность с течением времени, т.е. чем дольше отряд простоит на поле, тем больше очков он сможет принести. Движки могут увеличивать свою ценность: получая заряды в конце хода (Усиленная баллиста) или при выполнении определённого условия получения зарядов (Огненный Скорпион); усиливая сами себя (Медоносный призрак) или соседние отряды (Анна Стенгер); нанося урон противнику в конце хода (Ведьмак школы Кота); или каким либо иным образом в долговременной перспективе увеличивая свою пользу при соблюдении определённых условий (Ученик из Бан-Арда, Томимая жаждой, Гамадриада и многие другие). Движки часто путают со спендерами, которые хоть и тоже генерируют очки после выставления на стол, но относятся всё же к отдельной группе карт.</p></div></article>
@@ -430,20 +461,26 @@
 <article class="term" id="draft"><h3 class="term-title">Драфт</h3><div class="term-body"><p>Драфт (оф., англ. draft – проект, разработка) – см. подбор.</p></div></article>
 <article class="term" id="duel"><h3 class="term-title">Дуэль</h3><div class="term-body"><p>Дуэль (оф., англ. duel – дуэль) – уникальная механика фракции Королевства Севера. При вызове на дуэль одним отрядом другого, вызывающий отряд наносит вызываемому урон, равной своей силе, после чего второй отряд наносит первому урон, равный своей итоговой силе. Дуэль продолжается, пока один из отрядов не будет уничтожен.</p></div></article>
 </section>
-<section class="group" id="group-5" data-group="Е–И"><h2 class="group-title">Е–И</h2>
+<section class="group" id="letter-e" data-letter="Е"><h2 class="group-title">Е</h2>
 <article class="term" id="ezhednevnoe-zadanie"><h3 class="term-title">Ежедневное задание</h3><div class="term-body"><p>Ежедневное задание (оф., англ. англ. daily quest) – задание, выдаваемое каждый день в полночь по GMT. Выполнение задания приносит игроку руду, очки наград или метеоритную пыль (последнее при достижении девятого уровня престижа, а также, во время некоторых ивентов). Единовременно у игрока может быть не более трёх невыполненных дейлика. Раз в день можно обменять задание на другое. Количество замен в день увеличивается до двух при достижении второго уровня престижа. Синонимы: дейлик.</p></div></article>
+</section>
+<section class="group" id="letter-zh" data-letter="Ж"><h2 class="group-title">Ж</h2>
 <article class="term" id="zhazhda-krovi"><h3 class="term-title">Жажда крови</h3><div class="term-body"><p>Жажда крови (оф., англ. bloodthirst – кровожадность) – уникальная механика фракции Скеллиге. Способность, описанная после ключевого слова "Жажда крови N" активируется только в том случае, если на стороне противника не меньше N повреждённых отрядов (отрядов с красной силой).</p></div></article>
 <article class="term" id="zheleznaia-volia"><h3 class="term-title">Железная воля</h3><div class="term-body"><p>Железная воля (оф., англ. Iron judgment) – третье по счёту дополнение, вышедшее 2 октября 2019 года. Оно принесло в ГВИНТ более 80 новых карт и такие игровые механики как Броня, Баррикада и Уязвимость и статус Защитник. Заглавным персонажем дополнения является Радовид Свирепый.</p></div></article>
+</section>
+<section class="group" id="letter-z" data-letter="З"><h2 class="group-title">З</h2>
 <article class="term" id="zaveshchanie"><h3 class="term-title">Завещание</h3><div class="term-body"><p>Завещание (оф., от англ. – deathwish – жажда смерти) – уникальная механика фракции Чудовища. Способность, описанная после ключевого слова "Завещание" сработает, когда этот отряд уничтожается. У удалённого и/или заблокированного отряда способность завещания не сработает.</p></div></article>
 <article class="term" id="zagovor"><h3 class="term-title">Заговор</h3><div class="term-body"><p>Заговор (оф., от англ. – conspiracy) – уникальная механика фракции Нильфгаард. Означает, что указанный в описании эффект сработает только в том случае, если в качестве цели выбран отряд со статусом "Шпион".</p></div></article>
 <article class="term" id="zadeistvovanie"><h3 class="term-title">Задействование</h3><div class="term-body"><p>Задействование (оф., от англ. spring – пружина) – уникальная механика ловушек у фракции Скоя’таэли. Это активация способности ловушки вручную, не дожидаясь выполнения условий Засады. При этом срабатывает более слабая способность, нежели прокаемая засадой.</p></div></article>
+<article class="term" id="zakrytyi-beta-test-zbt"><h3 class="term-title">Закрытый бета-тест (ЗБТ)</h3><div class="term-body"><p>Закрытый бета-тест или ЗБТ – самая ранняя версия онлайн-ГВИНТа. Закрытое бета-тестирование на платформах Windows и Xbox One началось 25 октября 2016 года. На этом этапе ГВИНТ кардинально отличался от современного. Изначально в игру было добавлено всего 4 фракции: Королевства Север, Скеллиге, Чудовища и Скоя’таэли. Фракция Нильфгаард была добавлена лишь 6 декабря 2017 года вместе с большим обновлением, включающим 60 новых карт. Геймплей во времена ЗБТ был намного ближе к оригинальному оффлайн ГВИНТу из игры "Ведьмак 3: Дикая Охота", но с большим количеством отличий: карты делились на 3 класса – золотые (неуязвимые, в колоду можно было положить не более 4 карт), серебряные (не более 6 карт в колоде) и бронзовые (все остальные до 25), а у самих карт появились новые типы способностей. Существенной переработке подверглась и визуальная составляющая – поле было переделано, а многие карты полностью перерисованы и получили анимацию. Если сравнивать геймплейную составляющую с современным ГВИНТом, то из существенных отличий можно назвать присутствие в ЗБТ третьего игрового ряда, отсутствие "Провизии", отсутствие ограничения на кол-во отрядов в ряду и т.д. За ЗБТ последовал следующий этап: открытый бета-тест (ОБТ).</p></div></article>
 <article class="term" id="zariady"><h3 class="term-title">Заряды</h3><div class="term-body"><p>Заряды (оф., от англ. сharge – заряжать) – механика, характерная для некоторых карт со способностью "Приказ", обозначающая, сколько раз можно активировать этот приказ. Число зарядов может увеличиваться при выполнении определённых условий или специальными картами. Другие названия термина: тик.</p></div></article>
 <article class="term" id="zasada"><h3 class="term-title">Засада</h3><div class="term-body"><p>Засада (оф., от англ. ambush) – уникальная механика ловушек у фракции Скоя’таэли. Карта с ключевым словом "Засада" играется рубашкой вверх, и срабатывает (переворачивается и активирует способность) при выполнении определенных условий.</p></div></article>
 <article class="term" id="zaspam"><h3 class="term-title">Заспам</h3><div class="term-body"><p>Заспам (разг, от англ. swarm – рой) – архетип колод, набирающих очки путём загромождения своей стороны поля большим количеством слабых отрядов-символов и последующим их массовым усилением. Примеры заспама: архетип "Дети Огня" у фракции Синдикат; так называемая "Арахна" – архетип фракции чудовищ на абилке "Гнездо главоглазов" с большим количеством карт с категорией "Инсектоид". Опасным противником подобных архетипов могут стать колоды с большим количество АоЕ урона.</p></div></article>
 <article class="term" id="zakhvatite"><h3 class="term-title">Захватите</h3><div class="term-body"><p>Захватите (оф., от англ. seize – схватить) – механика, обозначающая перемещение вражеского отряда в противоположный ряд, то есть на свою половину поля.</p></div></article>
 <article class="term" id="zashchitnik"><h3 class="term-title">Защитник</h3><div class="term-body"><p>Защитник (оф., англ. defender) – позитивный статус. Если в одном из ваших рядов стоит отряд со статусом "Защитник", то противник не сможет выбирать другие карты, находящиеся в том же ряду, в качестве цели до тех пор, пока не избавится от защитника (очистит, удалит, уничтожит его и т.д). Распространённой ошибкой многих новичков является попытка заблокировать защитника. Помните, что блокировка отменяет способности, но НЕ статусы! Синонимы термина: деф, дефендер.</p></div></article>
-<article class="term" id="zakrytyi-beta-test-zbt"><h3 class="term-title">Закрытый бета-тест (ЗБТ)</h3><div class="term-body"><p>Закрытый бета-тест или ЗБТ – самая ранняя версия онлайн-ГВИНТа. Закрытое бета-тестирование на платформах Windows и Xbox One началось 25 октября 2016 года. На этом этапе ГВИНТ кардинально отличался от современного. Изначально в игру было добавлено всего 4 фракции: Королевства Север, Скеллиге, Чудовища и Скоя’таэли. Фракция Нильфгаард была добавлена лишь 6 декабря 2017 года вместе с большим обновлением, включающим 60 новых карт. Геймплей во времена ЗБТ был намного ближе к оригинальному оффлайн ГВИНТу из игры "Ведьмак 3: Дикая Охота", но с большим количеством отличий: карты делились на 3 класса – золотые (неуязвимые, в колоду можно было положить не более 4 карт), серебряные (не более 6 карт в колоде) и бронзовые (все остальные до 25), а у самих карт появились новые типы способностей. Существенной переработке подверглась и визуальная составляющая – поле было переделано, а многие карты полностью перерисованы и получили анимацию. Если сравнивать геймплейную составляющую с современным ГВИНТом, то из существенных отличий можно назвать присутствие в ЗБТ третьего игрового ряда, отсутствие "Провизии", отсутствие ограничения на кол-во отрядов в ряду и т.д. За ЗБТ последовал следующий этап: открытый бета-тест (ОБТ).</p></div></article>
 <article class="term" id="zerkalo"><h3 class="term-title">Зеркало</h3><div class="term-body"><p>Зеркало (разг., от англ. mirror) – ситуация когда оппоненты используют одну и ту же, или минимально отличающуюся колоду. Синонимы термина: зеркалка, миррор.</p></div></article>
+</section>
+<section class="group" id="letter-i" data-letter="И"><h2 class="group-title">И</h2>
 <article class="term" id="ivent"><h3 class="term-title">Ивент</h3><div class="term-body"><p>Ивент (оф. и разг., от англ. event – случай, событие) – это какое-либо необычное, важное событие или мероприятие в игровом мире. Как правило, ивенты проводятся внутри игры, но особенно масштабные события имеют и внеигровую часть. Например, иногда разработчики могут устроить официальные конкурсы, арендовать площадку и организовать встречу и т.д. Все ивенты можно разделить на две большие группы: календарные и тематические. Календарные ивенты совпадают с общепринятыми, повсеместно распространёнными или сугубо внутриигровыми праздниками (в ГВИНТе календарными ивентами можно считать, к примеру, ивент на Новый год, День Святого Валентина, Саовину (Хэллоуин), ивент в честь дня рождения Цири и Йеннифер и др.). Тематические ивенты, как правило, носят нерегулярный характер и могут быть посвящены любой теме или событию, связанным с игрой – выходу дополнения, проведению мероприятия и т.д. Примеры: ивент "Главное испытание Гюнтера", проведённый во время выхода дополнения "Господин Зеркало"; или "Witchercoin" – ивент, проведённый в честь одноимённой выставки, посвященной вселенной Ведьмака.</p></div></article>
 <article class="term" id="iznachalnaia-koloda"><h3 class="term-title">Изначальная колода</h3><div class="term-body"><p>Изначальная колода (оф., англ. starting deck – стартовая колода) – колода, с которой игрок начинает свою игру. Синонимы термина: стартовая колода.</p></div></article>
 <article class="term" id="imba"><h3 class="term-title">Имба</h3><div class="term-body"><p>Имба (оф., от англ. imbalanced – не сбалансировано) – субъективная оценка карт, колод или отдельных способностей, по мнению игроков играющих настолько сильно, что нарушают баланс игры и дают использующему их игроку значительное преимущество. Синонимы термина: полом.</p></div></article>
@@ -451,7 +488,7 @@
 <article class="term" id="istoshchite"><h3 class="term-title">Истощите</h3><div class="term-body"><p>Истощите (оф., от aнгл. drain – осушать) – отряд с ключевым словом "Истощите" наносит урон другому отряду и усиливается на величину нанесенного урона. Следует помнить, что Истощение игнорирует броню.</p></div></article>
 <article class="term" id="istselite"><h3 class="term-title">Исцелите</h3><div class="term-body"><p>Исцелите (оф., англ. heal – лечение) – ключевое слово, обозначающее восстановление поврежденного отряда до его изначальной силы или на число, указанное в описании способности, но не выше изначальной.</p></div></article>
 </section>
-<section class="group" id="group-6" data-group="К"><h2 class="group-title">К</h2>
+<section class="group" id="letter-k" data-letter="К"><h2 class="group-title">К</h2>
 <article class="term" id="kalibrovka"><h3 class="term-title">Калибровка</h3><div class="term-body"><p>Калибровка – этап игры по 25 игр на четырёх фракциях. Калибровка имеет значение для Про-ладдера, где конечная позиция игрока в рейтинге определяется, исходя из величины общего ММР. Общий ММР в свою очередь формируется из максимально достигнутых в сезоне значений фракционного ММР (fMMR). Учитываются при этом показатели счёта fMMR только 4-ёх сильнейших фракций игрока (оставшиеся 2 фракции, у которых fMMR меньше, чем у других, в расчёт не берутся). Чтобы начать полноценно набирать fMMR, необходимо для начала откалибровать фракцию, т.е сыграть на ней 25 игр. По завершению калибровки игроку вне зависимости от его винрейта во время калибровки будет начислен минимальный фракционный ММР – 2400, однако, чем больше побед будет сделано в течение 25 игр, тем выше будет стартовый fMMR игрока по завершению калибровки. В случае, если калибровка завершена не до конца, то итоговый результат по fMMR будет умножаться на n/25, где n – число игр на этой фракции. Подробнее о турнирной системе можно прочитать здесь: <a class="ext" href="https://vk.com/@claymoregwent-gwent-masters-4">https://vk.com/@claymoregwent-gwent-masters-4</a>.</p></div></article>
 <article class="term" id="kambek"><h3 class="term-title">Камбэк</h3><div class="term-body"><p>Камбэк (разг., от англ. come back – возвращаться) – серьёзный перелом по ходу встречи, ряд последовательных результативных действий, позволивших проигрывающему игроку одержать победу. Чаще всего используется в турнирах для обозначения победы после проигрыша 0:2.</p></div></article>
 <article class="term" id="kataklizm"><h3 class="term-title">Катаклизм</h3><div class="term-body"><p>Катаклизм (оф., англ. cataclysm) – эффект ряда (см. АоЕ). В начале хода игрока, на чьей стороне поля находится этот эффект, случайным образом распределите 3 ед. урона между всеми отрядами в этом ряду.</p></div></article>
@@ -467,26 +504,26 @@
 <article class="term" id="kki"><h3 class="term-title">ККИ</h3><div class="term-body"><p>ККИ (оф., англ. CCG: Collectible card game – Коллекционная Карточная Игра) – разновидность настольных и компьютерных игр. В отличие от традиционных карточных игр, ККИ используют специальные коллекционные карты, и включают в себя элемент декбилдинга, что кардинальным образом разноображивает геймплейную составляющую. Обычно в ККИ распространяются стартовые колоды для начала игры, которые впоследствие можно расширять, получая карты из бустеров (см. Бочки). Наиболее известными ККИ, помимо ГВИНТа, являются Magic: The Gathering, Heartstone, Legends of Runterra и The Elder Scrolls: Legends.</p></div></article>
 <article class="term" id="kladbishche"><h3 class="term-title">Кладбище</h3><div class="term-body"><p>Кладбище (разг., англ. graveyard) – тоже самое, что и сброс. Интересно отметить, что в английской версии ГВИНТа для обозначения места, куда попадают ушедшие с поля карты, употребляется именно "Graveyard" (кладбище), что соответствует оригинальному ГВИНТу в игре "Ведьмак 3: Дикая Охота" и многим другим ККИ.</p></div></article>
 <article class="term" id="kniga-nagrad"><h3 class="term-title">Книга наград</h3><div class="term-body"><p>Книга наград (оф, англ. – book of awards) – раздел меню, в котором содержатся Деревья наград. Открывая пункты в деревьях за Очки наград можно получить Руду, Метеоритную пыль, Обрывки, бочки карт, сами карты или косметику. Открыв всё дерево вы дополнительно получите какую-либо награду. Открывая некоторые пункты (свитки и сундуки), вы также открываете уникальные истории, в рамках одного дерева посвящённые одной теме. Эти истории можно найти в нашем паблике по тегу #rewardtree@claymoregwent.</p></div></article>
-<article class="term" id="konsid"><h3 class="term-title">Консид</h3><div class="term-body"><p>Консид (разг., от англ. concede – уступать) – признание поражения и досрочное завершение игры путём нажатия на кнопку "сдаться". В случае если игрок понимает, что ему не выиграть партию, и он больше не хочет или по каким-то причинам не может продолжать матч, то сдача игры выходом через кнопку "сдаться" является единственной приличной возможностью прекратить партию. Все прочие способы, в частности, так называемое "шнуродёрство" относятся к разновидностям БМ и в приличном обществе трактуются, как явное проявление неуважения к оппоненту.</p></div></article>
 <article class="term" id="kompetitiv"><h3 class="term-title">Компетитив</h3><div class="term-body"><p>Компетитив (разг., с англ. competitive – конкурентоспособный). Возможны два значения:</p>
 <ol><li>Режим соревновательной игры (то же самое, что и Ладдер).</li><li>Колода, которая может эффективно использоваться в соревновательной игре, в том числе на турнирах.</li></ol></div></article>
+<article class="term" id="konsid"><h3 class="term-title">Консид</h3><div class="term-body"><p>Консид (разг., от англ. concede – уступать) – признание поражения и досрочное завершение игры путём нажатия на кнопку "сдаться". В случае если игрок понимает, что ему не выиграть партию, и он больше не хочет или по каким-то причинам не может продолжать матч, то сдача игры выходом через кнопку "сдаться" является единственной приличной возможностью прекратить партию. Все прочие способы, в частности, так называемое "шнуродёрство" относятся к разновидностям БМ и в приличном обществе трактуются, как явное проявление неуважения к оппоненту.</p></div></article>
 <article class="term" id="konstruktor-kolod"><h3 class="term-title">Конструктор колод</h3><div class="term-body"><p>Конструктор колод (оф., англ. deck builder) – раздел меню в игре, в котором составляются колоды. Другие названия: декбилдер.</p></div></article>
 <article class="term" id="kontrakt"><h3 class="term-title">Контракт</h3><div class="term-body"><p>Контракт (оф., англ. contract) – определённые внутриигровые задания, за выполнение которых игрок получает награду (очки наград, карты, косметику и т.д.). Посмотреть прогресс выполнения всех доступных контрактов можно в профиле в игре в разделе "Контракты". Синонимы термина: ачивка (в значении 2).</p></div></article>
-<article class="term" id="kosmetika"><h3 class="term-title">Косметика</h3><div class="term-body"><p>Косметика – внутриигровые элементы, изменяющие облик игры и не влияющие на игровой процесс. В ГВИНТе к таковым относятся: Рубашки карт, Аватарки, Рамки, Титулы, а также скины Лидеров и их элементы; игровые поля, монетки и музыкальные темы. Косметику можно получить из Книги наград, в ходе Путешествий, специальных ивентов, выполняя контракты, а также купить в магазине за реальные деньги или Метеоритную пыль. Всю косметику можно найти на сайте <a class="ext" href="https://trendygwentleman.com/cosmetics/">https://trendygwentleman.com/cosmetics/</a>.</p></div></article>
 <article class="term" id="kontrol"><h3 class="term-title">Контроль</h3><div class="term-body"><p>Контроль (оф., англ. control) – один из 4-ёх основных архетипов. Основная стратегия – игра преимущественно не через накопление силы на своей стороне поля, а через лишение оппонента возможности разыграть свою стратегию победы путём:</p>
 <ol class="alpha"><li>уничтожения или выведения из строя (например, с помощью блокировки) колодообразующих карт противника;</li><li>целенаправленного разрушения синергий;</li><li>уничтожения колоды (так называемый "милл");</li></ol>
 <p>И т.д.</p>
 <p>Обычно контроль-колоды используют много особых карт, ориентированных на нанесение урона (их можно условно назвать "Контролем на X", где X – величина наносимого урона). К типичным представителям "чистого" архетипа Контроля можно отнести ноуюнит сборки. Согласно концепции Треугольника архетипов, Контроль имеет некоторое преимущество против Движкового архетипа; опасным же противником для него может стать Поинтслэм.</p></div></article>
+<article class="term" id="kosmetika"><h3 class="term-title">Косметика</h3><div class="term-body"><p>Косметика – внутриигровые элементы, изменяющие облик игры и не влияющие на игровой процесс. В ГВИНТе к таковым относятся: Рубашки карт, Аватарки, Рамки, Титулы, а также скины Лидеров и их элементы; игровые поля, монетки и музыкальные темы. Косметику можно получить из Книги наград, в ходе Путешествий, специальных ивентов, выполняя контракты, а также купить в магазине за реальные деньги или Метеоритную пыль. Всю косметику можно найти на сайте <a class="ext" href="https://trendygwentleman.com/cosmetics/">https://trendygwentleman.com/cosmetics/</a>.</p></div></article>
 <article class="term" id="kraun-pointy"><h3 class="term-title">Краун Поинты</h3><div class="term-body"><p>Краун поинты (разг., от англ. сrown рoints – очки корон) – см. Очки Корон. В иностранном сленге часто используется сокращение СР.</p></div></article>
 <article class="term" id="krovavaia-luna"><h3 class="term-title">Кровавая луна</h3><div class="term-body"><p>Кровавая луна (оф., англ. blood moon) – эффект ряда (см. АоЕ). В начале хода игрока, на чьей стороне поля находится этот эффект, добавьте кровотечение случайному отряду на 2 хода. Если у отряда уже есть кровотечение, вместо этого нанесите ему 2 ед. урона.</p></div></article>
-<article class="term" id="krovotechenie"><h3 class="term-title">Кровотечение</h3><div class="term-body"><p>Кровотечение (оф., англ. – bleeding) – негативный статус. Отряд, имеющий статус "Кровотечение" в конце своего хода получает 1 ед. урона. Ходы кровотечения могут суммироваться, кроме того следует помнить, что 1 ход кровотечения отменяет 1 ход выносливости и наоборот.</p></div></article>
 <article class="term" id="krovnaia-vrazhda-kv"><h3 class="term-title">Кровная Вражда (КВ)</h3><div class="term-body"><p>Кровная Вражда или КВ (оф. полное название: англ. "Thronebreaker: The Witcher Tales" – Кровная вражда: Ведьмак. Истории") – мультиплатформенная компьютерная ролевая игра с механиками ГВИНТа и название одноимённого комплекта карт, добавленного непосредственно в ГВИНТ после её выхода. Изначально КВ планировалась, как сюжетное дополнение к ГВИНТу, однако в процессе создания переросла в полноценную одиночную игру, тем не менее напрямую связанную с ГВИНТом. Доступна для покупки как на PC, так и на мобильных устройствах. За покупку Кровной Вражды вы получите базовые версии относящихся к ней карт (20 штук) для ГВИНТа, а в ходе прохождения сможете не только получить их премиальные версии и уникальную косметику из специальных сундуков, но также и выполнить специальные контракты ГВИНТа. Стоит упомянуть, что без приобретения Кровной Вражды премиальные версии карт комплекта создать отдельно нельзя (но обычные неанимированные версии доступны для создания за обрывки по обычному курсу).</p></div></article>
+<article class="term" id="krovotechenie"><h3 class="term-title">Кровотечение</h3><div class="term-body"><p>Кровотечение (оф., англ. – bleeding) – негативный статус. Отряд, имеющий статус "Кровотечение" в конце своего хода получает 1 ед. урона. Ходы кровотечения могут суммироваться, кроме того следует помнить, что 1 ход кровотечения отменяет 1 ход выносливости и наоборот.</p></div></article>
 <article class="term" id="krony"><h3 class="term-title">Кроны</h3><div class="term-body"><p>Кроны (оф., англ. crowns):</p>
 <ol><li>То же самое, что и монеты. Прозвище "кроны" происходит от оригинальных "крон" – фигурирующей как в книжной, так и в игровой саге денежной валюте вольного города Новиград.</li><li>Уникальные артефакты-символы фракции Синдикат, имеющие Приказ и статус "Обречённость".</li></ol></div></article>
 <article class="term" id="kuldaun"><h3 class="term-title">Кулдаун</h3><div class="term-body"><p>Кулдаун – разговорная калька на русский с английского "Cooldown". Имеет тоже самое значение, что и "Ходов до восстановления". Другие синонимы: КД.</p></div></article>
 <article class="term" id="kuptsy-iz-ofira"><h3 class="term-title">Купцы из Офира</h3><div class="term-body"><p>Купцы из Офира (оф., англ. Merchants of Ofir) – четвёртое по счёту крупное дополнение, вышедшее 9 декабря 2019 года. Принесло в ГВИНТ более 70 новых карт, в частности Стратегические Приёмы (не путать с Тактическим Преимуществом!) и Сценарии. Заглавным персонажем дополнения является Радея.</p></div></article>
 </section>
-<section class="group" id="group-7" data-group="Л–М"><h2 class="group-title">Л–М</h2>
+<section class="group" id="letter-l" data-letter="Л"><h2 class="group-title">Л</h2>
 <article class="term" id="ladder"><h3 class="term-title">Ладдер</h3><div class="term-body"><p>От англ. Ladder — лестница. Используемая в Про-ранге ГВИНТа соревновательная форма. За победу игроки получают очки MMR, которые вычитаются из очков противника. При этом игра подбирает противников с схожим MMR, чтобы уровень игры был равным. Важно отметить, что речь идёт о fMMR, однако рейтинг составляется по сумме четырёх лучших fMMR игрока за данный сезон.</p></div></article>
 <article class="term" id="last-sei"><h3 class="term-title">Ласт сей</h3><div class="term-body"><p>Ласт сей (разг., от англ. last say – последнее слово) – последний ход игрока. Может употребляться для обозначения последнего хода игрока, определяющего итог раунда, но чаще всего "ласт сеем" обозначают в принципе последний ход в партии, от которой будет зависеть её исход. В ласт сее используются, как правило, потенциально очень сильные карты – финишёры, способные переломить итог игры в пользу игрока, делающего завершающий ход.</p></div></article>
 <article class="term" id="lider"><h3 class="term-title">Лидер</h3><div class="term-body"><p>Может обозначать:</p>
@@ -495,6 +532,8 @@
 <article class="term" id="lovushka"><h3 class="term-title">Ловушка</h3><div class="term-body"><p>Ловушка (оф., англ. trap) – уникальные артефакты Скоя'таэлей, играющиеся рубашкой вверх, и имеющие ключевые слова Засада и Задействование. Противник не может видеть, какая ловушка была разыграна игроком до тех пор, пока не будет соблюдено определённое условие и не сработает Засада или артефакт не будет задействован вручную (Задействование). После активации своего эффекта ловушка считается вскрытой.</p></div></article>
 <article class="term" id="lok"><h3 class="term-title">Лок</h3><div class="term-body"><p>Лок (разг., от англ. lock – замок) – см. "Блокировка".</p></div></article>
 <article class="term" id="lou-rang"><h3 class="term-title">Лоу-ранг</h3><div class="term-body"><p>Лоу-ранг (разг., от англ. low rank – низкий ранг) – очень размытый термин, обозначающий игру на низких рангах рейтинговой системы ГВИНТа (субъективно можно ограничить их как 30-8 ранги), где вероятность встретить неопытных игроков и неметовые колоды значительно выше, чем на рангах высоких (7-1 и Про).</p></div></article>
+</section>
+<section class="group" id="letter-m" data-letter="М"><h2 class="group-title">М</h2>
 <article class="term" id="masters"><h3 class="term-title">Мастерс</h3><div class="term-body"><p>Полное название: GWENT WORLD MASTERS.</p></div></article>
 <article class="term" id="matchap"><h3 class="term-title">Матчап</h3><div class="term-body"><p>От англ. matchup — совпадение. Прогноз на исход боя на основании анализа участвующих колод, посредством статистики подобных исходов. Так, например, неудачным матчапом для колод на архетипе заспама будут колоды, в которых присутствует много инструментов с AoE уроном.</p></div></article>
 <article class="term" id="mesto"><h3 class="term-title">Место</h3><div class="term-body"><p>Место (оф., англ. location) – категория артефакта, имеющая способности Размещение, Приказ и статус Стойкость.</p></div></article>
@@ -511,13 +550,15 @@
 <article class="term" id="moroz"><h3 class="term-title">Мороз</h3><div class="term-body"><p>Мороз (оф., англ. frost) – эффект ряда (см. АоЕ). В начале хода игрока, на чьей стороне поля находится этот эффект, нанесите 2 ед. урона сильнейшему отряду в этом ряду.</p></div></article>
 <article class="term" id="mulligan"><h3 class="term-title">Муллиган</h3><div class="term-body"><p>От англ. Mulligan. Стадия замены карт в руке, с целью получить нужные карты, либо же сами замены. Фаза муллиганов происходит перед каждым из раундов, при этом перед первым раундом у игрока, ходящего первым, есть возможность заменить до трёх карт, в то время как во всех остальных случаях максимальное число замен – 2. Если же число карт в руке игрока после добора перед очередным раундом должно было превысить 10, все лишние карты не добираются, а дают возможность сделать дополнительную замену.</p></div></article>
 </section>
-<section class="group" id="group-8" data-group="Н–О"><h2 class="group-title">Н–О</h2>
+<section class="group" id="letter-n" data-letter="Н"><h2 class="group-title">Н</h2>
 <article class="term" id="nagrada-za-golovu"><h3 class="term-title">Награда за голову</h3><div class="term-body"><p>За уничтожение отряда с этим статусом оппонент получает количество монет, равное изначальной силе отряда. На одной половине поля единовременно может быть только 1 такой отряд.</p></div></article>
 <article class="term" id="nastoi"><h3 class="term-title">Настой</h3><div class="term-body"><p>Настой (оф. англ. infused — вселять, вливать) — статус, добавляющий картам эффекты или категории. Если снять его (например, очистив отряд с настоем), все добавленные эффекты и категории также исчезнут. Блокировка также отключает способности настоев.</p></div></article>
+<article class="term" id="nyorf"><h3 class="term-title">Нёрф</h3><div class="term-body"><p>Нёрф (разг., от англ. nerf – ухудшение, ослабление) – балансное изменение карт, механик, способностей лидеров, приводящее к их ослаблению и понижению эффективности в игре. Обычно нёрфы и баффы (в значении 1, также см. термин ап) карт и др. выпускаются разработчиками вместе с балансными патчами.</p></div></article>
 <article class="term" id="neuiazvimost"><h3 class="term-title">Неуязвимость</h3><div class="term-body"><p>Этот отряд нельзя выбрать вручную как цель. Способности срабатывающие без выбора продолжат влиять на отряд.(погода, выстрелы усиленных требушетов, восстановления Ирденом и тд).</p></div></article>
-<article class="term" id="nerf"><h3 class="term-title">Нёрф</h3><div class="term-body"><p>Нёрф (разг., от англ. nerf – ухудшение, ослабление) – балансное изменение карт, механик, способностей лидеров, приводящее к их ослаблению и понижению эффективности в игре. Обычно нёрфы и баффы (в значении 1, также см. термин ап) карт и др. выпускаются разработчиками вместе с балансными патчами.</p></div></article>
 <article class="term" id="novigrad"><h3 class="term-title">Новиград</h3><div class="term-body"><p>Дополнение, вышедшее 28 июня 2019 года. Принесло в ГВИНТ фракцию Синдиката с 90 новыми картами и соответствующими механиками. Также в ней впервые появились межфракционные карты.</p></div></article>
 <article class="term" id="nouiunit"><h3 class="term-title">Ноуюнит</h3><div class="term-body"><p>От англ. No unit – нет отряда. Архетип, основная особенность которого заключается в том, чтобы минимально играть отряды, не давая таким образом оппоненту целей под урон, используя, в основном, Особые карты, и выставлять отряды лишь в последний момент.</p></div></article>
+</section>
+<section class="group" id="letter-o" data-letter="О"><h2 class="group-title">О</h2>
 <article class="term" id="obrechennost"><h3 class="term-title">Обреченность</h3><div class="term-body"><p>Отряд с этим статусом после ухода со стола не попадает в сброс, а удаляется из игры. При этом Завещание обречённого отряда всё равно срабатывает.</p></div></article>
 <article class="term" id="obryvki"><h3 class="term-title">Обрывки</h3><div class="term-body"><p>Англ. Scraps. Один из основных ресурсов в ГВИНТе. Используется для создания карт. Создание Легендарной карты стоит 800 обрывков, Эпической – 200, Редкой – 50, Обычной – 20.</p></div></article>
 <article class="term" id="obt"><h3 class="term-title">ОБТ</h3><div class="term-body"><p class="empty">Определение пока не добавлено.</p></div></article>
@@ -529,12 +570,12 @@
 <article class="term" id="ochki-koron"><h3 class="term-title">Очки корон</h3><div class="term-body"><p>Очки корон (ОК), также известные как краунпоинты (от англ. crown points); в англоязычном сегменте также можно встретить сокращение "CP" – специальные очки, которыми отмечаются достижения игроков в ходе сезона Мастерс. Получить их можно за участие в официальных турнирах (квалификации, Опены) или в течение соревновательных сезонов, при попадание в Топ-200 игроков, набравших больше всего ММР в Про-ранге.</p></div></article>
 <article class="term" id="ochki-nagrad-on"><h3 class="term-title">Очки наград (ОН)</h3><div class="term-body"><p>Очки наград или ОН (оф., англ. reward points) – один из основных ресурсов ГВИНТа. ОН тратятся на открытие записей в Книге наград. Их можно получить за выполнение ежедневных заданий, контрактов, а также и по итогам сезона, в зависимости от занимаемого ранга.</p></div></article>
 </section>
-<section class="group" id="group-9" data-group="П"><h2 class="group-title">П</h2>
-<article class="term" id="partner"><h3 class="term-title">Партнёр</h3><div class="term-body"><p>Официальными Партнёрами ГВИНТа могут стать люди, регулярно создающие контент по ГВИНТу. При этом они получают особую Рубашку для карт, Титул, несколько Премиальных бочек при выходе дополнения, а также возможность ревиллить карты.</p></div></article>
+<section class="group" id="letter-p" data-letter="П"><h2 class="group-title">П</h2>
+<article class="term" id="partnyor"><h3 class="term-title">Партнёр</h3><div class="term-body"><p>Официальными Партнёрами ГВИНТа могут стать люди, регулярно создающие контент по ГВИНТу. При этом они получают особую Рубашку для карт, Титул, несколько Премиальных бочек при выходе дополнения, а также возможность ревиллить карты.</p></div></article>
 <article class="term" id="passivnaia-sposobnost"><h3 class="term-title">Пассивная способность</h3><div class="term-body"><p>Пассивная способность – любая способность карты, не являющаяся способностью "Размещение" и не требующая обязательного непосредственного прямого взаимодействия с этой картой через "Приказ" и "Задействование". Пассивные способности характерны только для определённых карт отрядов и артефактов – это способности, активирующиеся при выполнении определённого условия или при розыгрыше карт-триггеров пассивной способности. Пример: пассивная способность у карты "Ивасик" – нанесение 2 ед. урона случайному отряду противника каждый раз, когда контролирующий Ивасика игрок разыгрывает особую карту. У Ивасика есть условие – розыгрыш игроком особой карты, и без выполнения этого условия пассивная способность Ивасика не сработает, при этом прямого взаимодействия с этой картой от игрока не требуется. Другой пример: артефакт "Портал" имеет пассивную способность призыва отряда со стоимостью найма не более 4 ед. каждые 3 хода.</p></div></article>
 <article class="term" id="patch"><h3 class="term-title">Патч</h3><div class="term-body"><p>Патч (от англ. patch – заплатка) – техническое обновление, как правило, вносящее в игру балансные правки (результат процесса балансировки), изменения в игровых режимах, доработку игрового интерфейса, а также исправляющее баги.</p></div></article>
 <article class="term" id="pikreit"><h3 class="term-title">Пикрейт</h3><div class="term-body"><p>Пикрейт (от англ. pickrate – рейтинг выбора) – показатель популярности определённой карты или колоды, т.е. отношение игр, в которых игроки взяли эту карту (или колоду) к количеству всех игр.</p></div></article>
-<article class="term" id="platezh"><h3 class="term-title">Платёж</h3><div class="term-body"><p>Способность, для активации которой необходимо заплатить определенное количество монет. В отличии от Дани можно активировать в любой момент своего хода, пока отряд на поле. Если не указано число ходов до восстановления, то количество активируемых Платежей за ход ограничено лишь числом монет.</p></div></article>
+<article class="term" id="platyozh"><h3 class="term-title">Платёж</h3><div class="term-body"><p>Способность, для активации которой необходимо заплатить определенное количество монет. В отличии от Дани можно активировать в любой момент своего хода, пока отряд на поле. Если не указано число ходов до восстановления, то количество активируемых Платежей за ход ограничено лишь числом монет.</p></div></article>
 <article class="term" id="poverkrip"><h3 class="term-title">Поверкрип</h3><div class="term-body"><p>Поверкрип (разг., от англ. power creep – наращивание силы) – тенденция к постепенному усилению общей силы колод при выпуске новых карт, что ведёт к закономерному увеличению темпа игры. Поверкип очень явно присутствует в тех случаях, когда выпускаются новые карты, аналогичные по способностям старым, но при этом играющие более эффективнее. Также примером поверкрипа может служить ситуация, когда новая карта не имеет аналогов в игре, однако за свою провизию имеет очень высокое велью, что позволяет ей играть намного сильнее, чем карты старых выпусков.</p></div></article>
 <article class="term" id="poglotit"><h3 class="term-title">Поглотить</h3><div class="term-body"><p>Англ. Consume. Поглотить отряд означает уничтожить его и усилить поглощающий отряд на значение силы поглощаемого. Если поглощается карта, которая находится в сбросе, то она удаляется из игры. (Поглощение из сброса не активирует пассивные способности карт, связанные с поглощением отрядов, возможно, в ближайших патчах такое будет исправлено на "удалите отряд из вашего сброса и усильте эту карту на значение его силы", как это уже работает у Маммуны).</p></div></article>
 <article class="term" id="pogoda"><h3 class="term-title">Погода</h3><div class="term-body"><p>Погода – ныне устаревший, но всё ещё используемый в современном ГВИНТе разговорный термин, употребляемый игроками для обозначения разновидности АоЕ – эффекта ряда. Понятие берёт свои корни из оригинального ГВИНТа в игре "Ведьмак 3: Дикая Охота" и дополнений к ней, где игрок мог положить в колоду специальные погодные карты, особым способом действующие на ряды на всём игровом поле. Позднее, куда более изменённая версия механики погодных карт перекочевала в онлайн-версию ГВИНТа, однако, впоследствии, сам термин "погода" был изъят из игры, хотя по привычке до сих используется многими игроками.</p></div></article>
@@ -547,18 +588,18 @@
 <article class="term" id="prevoskhodstvo"><h3 class="term-title">Превосходство</h3><div class="term-body"><p>Способность, описанная после слова "Превосходство" активируется, если у противника нет отрядов сильнее, чем ваш самый сильный отряд.</p></div></article>
 <article class="term" id="predannost"><h3 class="term-title">Преданность</h3><div class="term-body"><p>Преданность (оф., англ. devotion) – способность, описанная после ключевого слова "Преданность" сработает только если в изначальной колоде игрока нет нейтральных карт (важно помнить, что нейтральные стратегические приёмы на Преданность не влияют!). При этом если вы или противник, играя на одной фракции, разыгрываете карту с условием преданности из любой другой фракции или переигрываете её, к примеру, с помощью "Осведомительницы княгини", то способность "Преданность" чужой карты всё равно сработает, если в изначальной колоде переигрывающего игрока не было нейтральных карт. Разговорный синоним: девоушн. Последний, как правило, используется для обозначения колод, играющих от преданности (<a href="#devoushn-dev-koloda">девоушн-деки</a>) или обходящихся без неё (<a href="#andevoushn-andev-koloda">андевоушн</a>).</p></div></article>
 <article class="term" id="prestizh"><h3 class="term-title">Престиж</h3><div class="term-body"><p>После получения 60 уровня следующий полученный уровень будет снова с цифрой 1, а игрок получает постоянное полезное усиление для учетной записи (например, 100% вероятность выпадения хотя бы одной анимированной карты из бочки). Каждый новый 60-уровневый цикл и является одним уровнем Престижа.</p></div></article>
-<article class="term" id="prikaz"><h3 class="term-title">Приказ</h3><div class="term-body"><p>Англ. Order. Способность, которую игрок должен использовать вручную. Если у карты отсутствует Рвение, Приказ можно активировать только на следующий ход после её появления на столе.</p></div></article>
 <article class="term" id="prizvat"><h3 class="term-title">Призвать</h3><div class="term-body"><p>Призвать карту - переместить карту из колоды, руки или сброса на стол. При этом эффекты, связанные с Размещением этой карты не активируются, равно как и пассивные способности других карт, реагирующих на розыгрыш карты.</p></div></article>
-<article class="term" id="pro-rang"><h3 class="term-title">Про ранг</h3><div class="term-body"><p>После достижения 1 ранга и заполнения мозаики, если в настройках у вас приняты положения Про ранга можно повысить ранг ещё раз - до нулевого. На нулевом ранге система рейтинга выстраивается по принципу ладдера. В конце сезона, если вы не вошли в топ-500 про-ранга, вы опуститесь на 3 ранг.</p></div></article>
+<article class="term" id="prikaz"><h3 class="term-title">Приказ</h3><div class="term-body"><p>Англ. Order. Способность, которую игрок должен использовать вручную. Если у карты отсутствует Рвение, Приказ можно активировать только на следующий ход после её появления на столе.</p></div></article>
 <article class="term" id="proviziia-provka"><h3 class="term-title">Провизия (Провка)</h3><div class="term-body"><p>Англ. provision. Ресурс, который учитывается при составлении колоды. Каждая карта “стоит” определенное количество провизии. Введена по соображениям баланса: чем больше очков может принести карта, тем больше провизии она стоит.</p></div></article>
 <article class="term" id="prokat"><h3 class="term-title">Прокать</h3><div class="term-body"><p>От англ. Proc. Активировать способность карты. Речь идёт как о пассивных способностях, активирующихся в конце хода или при реакции на другое событие, так и об активации приказа.</p></div></article>
-<article class="term" id="prokliatie-chernogo-solntsa"><h3 class="term-title">Проклятие Чёрного Солнца</h3><div class="term-body"><p>Проклятие Чёрного Солнца (оф., англ. The Curse of the Black Sun) — дополнение, вышедшее 5 июля 2022 года. Привнесло в игру три новые механики: настой, грация, столкновение. Заглавным персонажем дополнения стала Ренфри Сорокопутка.</p>
+<article class="term" id="prokliatie-chyornogo-solntsa"><h3 class="term-title">Проклятие Чёрного Солнца</h3><div class="term-body"><p>Проклятие Чёрного Солнца (оф., англ. The Curse of the Black Sun) — дополнение, вышедшее 5 июля 2022 года. Привнесло в игру три новые механики: настой, грация, столкновение. Заглавным персонажем дополнения стала Ренфри Сорокопутка.</p>
 <figure class="term-figure caption-only"><figcaption>Ренфри Сорокопутка — заглавный арт дополнения</figcaption></figure></div></article>
 <article class="term" id="prokrutka"><h3 class="term-title">Прокрутка</h3><div class="term-body"><p>Выкладывание больше одной карты за ход, с целью уменьшения количества оставшихся в колоде карт. Туторами называются карты, позволяющие достать другие карты из колоды. Существуют также и другие методы прокрутки, например, Панталон сам случайным образом перемещается из колоды на поле, уменьшая число оставшихся в колоде карт. Чем меньше карт, тем проще достать ключевые.</p></div></article>
+<article class="term" id="pro-rang"><h3 class="term-title">Про ранг</h3><div class="term-body"><p>После достижения 1 ранга и заполнения мозаики, если в настройках у вас приняты положения Про ранга можно повысить ранг ещё раз - до нулевого. На нулевом ранге система рейтинга выстраивается по принципу ладдера. В конце сезона, если вы не вошли в топ-500 про-ранга, вы опуститесь на 3 ранг.</p></div></article>
 <article class="term" id="puteshestvie"><h3 class="term-title">Путешествие</h3><div class="term-body"><p>Англ. Journey - Одна из систем прогресса в ГВИНТЕ. Работает по принципу сезонного пропуска.</p></div></article>
 <article class="term" id="put-vedmaka"><h3 class="term-title">Путь Ведьмака</h3><div class="term-body"><p>Дополнение, вышедшее 8 декабря 2020 года. Дополнение принесло в ГВИНТ более 50 новых карт, новые Артефакты – Места, а также такие механики как Адреналин и Брешь.</p></div></article>
 </section>
-<section class="group" id="group-10" data-group="Р"><h2 class="group-title">Р</h2>
+<section class="group" id="letter-r" data-letter="Р"><h2 class="group-title">Р</h2>
 <article class="term" id="razmeshchenie"><h3 class="term-title">Размещение</h3><div class="term-body"><p>Размещение (оф., англ. deploy) – способность, описанная после ключевого слова "Размещение". Активируется тогда, когда отряд или артефакт разыгрывается на поле. При этом призванные или созданные в ряду отряды не активируют свою способность Размещения.</p></div></article>
 <article class="term" id="rangi"><h3 class="term-title">Ранги</h3><div class="term-body"><p>Ранги (разг., от англ. – ranks) – система прогресса игрока в ГВИНТе. Числовой критерий того, насколько хорошо он показывает себя в соревновательной игре. Всего рангов 31, и чем меньше эта цифра, тем более профессиональны ваши оппоненты. Для перехода на ранг выше необходимо полностью заполнить мозаику из 5 фрагментов, и после этого победить ещё 1 раз. За победу вы получаете фрагменты мозаик (для рангов 30-8 вы также получаете дополнительные фрагменты за серию побед). На рангах 25-15 вы теряете фрагмент мозаики за 2 поражения подряд, на рангах 14 и меньше вы теряете фрагмент за каждое поражение. После ранга 1, если у вас приняты положения ранга Про, можно перейти на ранг 0. Чем выше в ранговой системе вы находитесь, тем больше награда в конце сезона. По завершении сезона, если вы находитесь на рангах 30-26, вы не опуститесь в рангах, если на рангах 25-8, вы опуститесь на 1 ранг, 7-1 – на 2 ранга.</p></div></article>
 <article class="term" id="random"><h3 class="term-title">Рандом</h3><div class="term-body"><p>Рандом (разг., от англ. random – случайность) – фактор случайности, не зависящий от игрока. В англоязычном сообществе используется также термин RNG – random number generator, генератор случайных чисел. Смотрите также: хайролл.</p></div></article>
@@ -576,34 +617,34 @@
 <article class="term" id="rukopashnyi-riad"><h3 class="term-title">Рукопашный ряд</h3><div class="term-body"><p>Рукопашный ряд (оф., англ. melee) – ближайший к оппоненту ряд на стороне поля игрока. Обозначается значком меча. Способность, описанная после ключевого слова "рукопашный ряд", сработает только когда карта находится в данном ряду. Также см. термин дальнобойный ряд.</p></div></article>
 <article class="term" id="riady"><h3 class="term-title">Ряды</h3><div class="term-body"><p>Ряд (оф., англ row) – в отличие от большинства других ККИ, в ГВИНТЕ очень часто большую роль играет то, как вы располагаете карты. Всего в распоряжении каждого игрока, начиная с Хоумкамминга, есть 2 ряда по 9 мест. Каждая карта, за исключением Особых карт, занимает одно место. В случае, если места на столе не осталось, при розыгрыше карты, требующей место, она переместится в сброс, не активировав свою способность. Существуют карты, способности которых зависят от того, в каком ряду они стоят. Так, например, Керис ан Крайт создаёт карту «Друммонд: щитоносец», если играется в рукопашном, переднем ряду, и «Друммонд: стража королевы», если в дальнобойном. Некоторые отряды, такие как Зельткирк из Гулеты, могут работать только в одном ряду. Такое ограничение называется "Роулок".</p></div></article>
 </section>
-<section class="group" id="group-11" data-group="С"><h2 class="group-title">С</h2>
+<section class="group" id="letter-s" data-letter="С"><h2 class="group-title">С</h2>
 <article class="term" id="sberezhenie"><h3 class="term-title">Сбережение</h3><div class="term-body"><p>Сбережение (оф., англ hoard) – уникальная способность фракции Синдикат. "Сбережение N" означает, что описанная далее способность сработает только в том случае, если у вас есть не менее N монет. Например карта Разбойники с каналов (нужна картинка) призовет свою копию из колоды, только если у вас не меньше 4 монет. Некоторые карты и/или абилка лидера могут уменьшить количество монет необходимых для активации способности.</p></div></article>
 <article class="term" id="sbros"><h3 class="term-title">Сброс</h3><div class="term-body"><p>Сброс (оф., англ graveyard – кладбище) – отдельная часть игрового поля (неплохо бы вставить картинку) куда уходят карты после окончания раундов или после разыгрывания (особые карты) при условии, если у них нет статуса "Обречённость". Способности некоторых карт связаны со сбросом и находящимися там картами. Синонимы: кладбище.</p></div></article>
 <article class="term" id="sbrosit"><h3 class="term-title">Сбросить</h3><div class="term-body"><p>Сбросить (оф., англ. discard) – игровая механика, заключающаяся в переносе карты из руки в сброс. Перенос карты из колоды на кладбище не является сбрасыванием. Синонимы: дискард.</p></div></article>
 <article class="term" id="sezon"><h3 class="term-title">Сезон</h3><div class="term-body"><p>Сезон (оф., англ. season). Может иметь несколько значений:</p>
 <ol><li>Турнирный сезон. В современной турнирной системе ГВИНТа один полный цикл турниров продолжается в течение года и завершается Мастерсом. Такой цикл называется турнирным сезоном, и обозначается порядковым номером.</li><li>Игровой сезон. Каждый год, посвящённый тому или иному зверю или растению, разбит на 12 сезонов, и начинается в марте. Каждый сезон длится приблизительно месяц. Между сезонами обычно происходят выходы дополнений и балансные патчи. По итогом 8 из 12 сезонов, называемых соревновательными, топ-64 игроков каждого участвуют в Квалификациях.</li></ol></div></article>
 <article class="term" id="setap"><h3 class="term-title">Сетап</h3><div class="term-body"><p>Сетап (разг., от англ. set up – обеспечивать) – создание условий для лучшей реализации той или иной карты. Например, для того что бы карта "Та-Что-Знает" фракции Чудовища сыграла эффективно и дала статус "Стойкость", согласно своей абилке, необходимо предварительно создать для неё необходимые условия – активировать в одном из своих рядов механику "Шабаш". Кроме того, предварительный сетап часто бывает необходим для проведения различных комбинаций, состоящих из несколько образующих комбинацию карт и карт/-ы основной, под которые/-ую эта комбинация создаётся. Может быть также полезно: "синергия".</p></div></article>
-<article class="term" id="simvol"><h3 class="term-title">Символ</h3><div class="term-body"><p>Символ (оф., от англ. token) – особый обреченный отряд или артефакт, отсутствующий в конструкторе колод и создаваемый при помощи других карт (картинку отряда символа). Синонимы: токен.</p></div></article>
 <article class="term" id="sila-otriada"><h3 class="term-title">Сила отряда</h3><div class="term-body"><p>Сила отряда (оф., англ. power) – число, написанное в левом верхнем углу карты. Это то количество очков, которое приносит карта отряда в общий счёт, без учёта её способностей. Способности карт могут изменять это значение. Если число изображено зелёным цветом – карта усилена (забаффана). Если красным – отряд повреждён (задамажен). Поврежденный отряд можно исцелить, а усиленный восстановить. Белый цвет означает изначальную силу отряда, некоторые способности карт позволяют увеличивать или уменьшать изначальную силу карт.</p></div></article>
 <article class="term" id="simbioz"><h3 class="term-title">Симбиоз</h3><div class="term-body"><p>Симбиоз (оф., англ. thrive – процветание) – уникальная способность фракции Чудовищ. Отряд с этим ключевым словом усиливается на 1 (если не указано иное значение) каждый раз, когда его владелец разыгрывает более сильный отряд. Некоторые карты способны активировать ваш симбиоз, даже если противник разыгрывает более сильный отряд, например Сэр Цараплот.</p></div></article>
+<article class="term" id="simvol"><h3 class="term-title">Символ</h3><div class="term-body"><p>Символ (оф., от англ. token) – особый обреченный отряд или артефакт, отсутствующий в конструкторе колод и создаваемый при помощи других карт (картинку отряда символа). Синонимы: токен.</p></div></article>
 <article class="term" id="sinergiia"><h3 class="term-title">Синергия</h3><div class="term-body"><p>Синергия (разг., от англ. synergy) – обобщённое понятие положительного взаимодействия между картами или между картами и абилкой лидера, дающее больше выгоды, чем игра их по отдельности. Может быть также полезно: сетап.</p></div></article>
 <article class="term" id="sozdaite"><h3 class="term-title">Создайте</h3><div class="term-body"><p>Создайте (оф., англ. spawn) – общая игровая механика, позволяющая вам добавить в игру карту, которой нет в вашей изначальной колоде.</p></div></article>
 <article class="term" id="son-drakona"><h3 class="term-title">Сон дракона</h3><div class="term-body"><p>Сон дракона (оф., англ. dragon’s dream) – одноименная карта и эффект ряда (см. АоЕ). Когда истечет таймер, в начале хода игрока, на чьей стороне поля находится этот эффект, нанесите по 3 ед. урона всем отрядам в этом ряду.</p></div></article>
 <article class="term" id="sotvorite"><h3 class="term-title">Сотворите</h3><div class="term-body"><p>Сотворите (оф., англ. create) – игровая механика, позволяющая создать одну из трёх случайно выбранных карт из указанного источника. На случайность могут быть наложены ограничения, в случае, если вариантов, которые подходят под условия меньше, может быть предложен выбор из двух или даже одной карты.</p></div></article>
-<article class="term" id="spender"><h3 class="term-title">Спендер</h3><div class="term-body"><p>Спендер (разг., от англ. spender – транжира, расточитель) – карты фракции Синдикат, конвертирующие монеты в очки игрового счёта. Спендеры в каком-то смысле похожи на движки, но движками в полном смысле этого термина не являются, так как, в отличие от последних, спендеры способны конвертировать монеты в очки сразу, а значит, в отличие от движков, повышают свою ценность не с течением времени, а с увеличением количества монет.</p></div></article>
 <article class="term" id="spell"><h3 class="term-title">Спелл</h3><div class="term-body"><p>Спелл (разг., от англ. spell – заклинание, не путать с категорией "Заклинание") – разговорное название особых карт в Гвинте. Выражение "кинуть спелл" означает сыграть особую карту.</p></div></article>
+<article class="term" id="spender"><h3 class="term-title">Спендер</h3><div class="term-body"><p>Спендер (разг., от англ. spender – транжира, расточитель) – карты фракции Синдикат, конвертирующие монеты в очки игрового счёта. Спендеры в каком-то смысле похожи на движки, но движками в полном смысле этого термина не являются, так как, в отличие от последних, спендеры способны конвертировать монеты в очки сразу, а значит, в отличие от движков, повышают свою ценность не с течением времени, а с увеличением количества монет.</p></div></article>
 <article class="term" id="srodstvo"><h3 class="term-title">Сродство</h3><div class="term-body"><p>Сродство (оф., англ. symbiosis, не путать с симбиозом) – уникальная способность фракции Скоя’таэли. При наличии отряда с этой способностью (или соответствующей способности лидера), каждый раз, когда владелец играет особую карту природы, создается токен “Бродячий древень” с силой, равной количеству отрядов со сродством.</p></div></article>
 <article class="term" id="status"><h3 class="term-title">Статус</h3><div class="term-body"><p>Статус (оф., англ status) – дополнительный модификатор, который может иметь отряд (некоторые артефакты и особые карты также могут иметь статусы). Каждый статус имеет своё обозначение, и нарисован на самой карте. Число статусов на карте не ограничено. В ГВИНТе на данный момент существует 13 статусов, среди которых есть как позитивные, так и негативные. Статус отряда можно очистить, тем самым он пропадает с карты. Общий перечень статусов: блокировка, брешь, выносливость, защитник, кровотечение, награда за голову, настой, неуязвимость, обречённость, покров, стойкость, шпион, яд.</p></div></article>
 <article class="term" id="stoimost-naima"><h3 class="term-title">Стоимость найма</h3><div class="term-body"><p>Стоимость найма (оф. англ. provision cost) – ресурс, который учитывается при составлении колоды. Каждая карта "стоит" определенное количество провизии. Введена из соображений поддержания баланса: чем больше очков может принести карта, тем больше провизии она стоит, а значит колода не сможет содержать большое количество таких карт. Некоторые карты способны взаимодействовать с провизией, например Наставник Школы Змеи делает свою силу равной стоимости найма верхней карты в колоде противника. Синонимы: провизия, провка.</p></div></article>
 <article class="term" id="stoikost"><h3 class="term-title">Стойкость</h3><div class="term-body"><p>Стойкость (оф., англ resilience) – положительный статус. Отряд или артефакт с этим статусом останется на столе в конце раунда, если не будет уничтожен ранее, и будет перенесён в следующий раунд. При этом усиления и броня будут сняты, а статусы, за исключением стойкости, перейдут в следующий раунд.</p></div></article>
 <article class="term" id="stolknovenie"><h3 class="term-title">Столкновение</h3><div class="term-body"><p>Столкновение (оф., англ. clash) — уникальная механика Скеллиге. Отряды одновременно наносят друг другу урон, равный значению их силы.</p></div></article>
 <article class="term" id="stratagem"><h3 class="term-title">Стратагем</h3><div class="term-body"><p>Стратагем (стратагема) – разговорная калька на русский, происходящая от официального английского термина "stratagem", обозначающего в ГВИНТе особый тип карт – стратегический приём.</p></div></article>
-<article class="term" id="strategicheskii-priem-sp"><h3 class="term-title">Стратегический приём (СП)</h3><div class="term-body"><p>Стратегический приём (оф., англ. stratagem) – тип карты, изначально присутствующий в каждой колоде, но появляющийся на поле только в первом раунде у игрока, делающего ход первым. (Исключение: может быть создан некоторыми картами или способностями, например Радея). Имеет приказ, который можно активировать сразу. С стратегическим приёмом нельзя взаимодействовать другими картами. После использования приказа или в конце раунда Стратегический приём удаляется. Синонимы: стратагем. Не следует путать с Тактическим Преимуществом (ТА)!</p></div></article>
+<article class="term" id="strategicheskii-priyom-sp"><h3 class="term-title">Стратегический приём (СП)</h3><div class="term-body"><p>Стратегический приём (оф., англ. stratagem) – тип карты, изначально присутствующий в каждой колоде, но появляющийся на поле только в первом раунде у игрока, делающего ход первым. (Исключение: может быть создан некоторыми картами или способностями, например Радея). Имеет приказ, который можно активировать сразу. С стратегическим приёмом нельзя взаимодействовать другими картами. После использования приказа или в конце раунда Стратегический приём удаляется. Синонимы: стратагем. Не следует путать с Тактическим Преимуществом (ТА)!</p></div></article>
 <article class="term" id="stroi"><h3 class="term-title">Строй</h3><div class="term-body"><p>Строй (оф., англ. formation) – уникальная способность фракции Королевства Севера. Отряд с ключевым словом "Строй" будет усилен на 1 ед., если разыгран в дальнобойном ряду, или получит Рвение, если будет разыгран в рукопашном ряду.</p></div></article>
 <article class="term" id="skhvatka"><h3 class="term-title">Схватка</h3><div class="term-body"><p class="empty">Определение пока не добавлено.</p></div></article>
 <article class="term" id="stsenarii"><h3 class="term-title">Сценарий</h3><div class="term-body"><p>Сценарий (оф., англ. scenario) – артефакт, имеющий тег "Сценарий". Содержит Пролог, который срабатывает сразу, в момент розыгрыша этой карты, и две Главы, способности, которые активируются при выполнении определенных условий. Пример: "Осада" у Королевств Севера. Срабатывает при выставлении осадных орудий. Были впервые представлены в дополнении Купцы из Офира.</p></div></article>
 </section>
-<section class="group" id="group-12" data-group="Т"><h2 class="group-title">Т</h2>
+<section class="group" id="letter-t" data-letter="Т"><h2 class="group-title">Т</h2>
 <article class="term" id="taimer"><h3 class="term-title">Таймер</h3><div class="term-body"><p>Таймер (разг., от англ. timer) – в конце вашего хода уменьшите значение таймера на 1. Как только оно достигает нуля, активируется определённая способность карты.</p></div></article>
 <article class="term" id="takticheskoe-preimushchestvo-ta"><h3 class="term-title">Тактическое Преимущество (ТА)</h3><div class="term-body"><p>Тактичесое Преимущество (ТА) (оф. и разг., от англ. Tactical Advantage – Тактическое Преимущество) – название одномённого базового стратегического приёма, по умолчанию присутствующего в колодах у всех игроков, если не выбран иной стратегический приём. Впервые добавлен в игру с обновлением "Хоумкаминг". Очень часто можно услышать, как термин ТА используется для обозначения всех стратегических приёмов, что в корне неверно и является терминологической ошибкой. Иногда вместо "ТА" используется разговорное "ташка".</p></div></article>
 <article class="term" id="tvig-twig"><h3 class="term-title">ТВИГ (TWIG)</h3><div class="term-body"><p>ТВИГ (оф., англ. TWIG – This Week In GWENT – На этой неделе в ГВИНТе) – еженедельная рубрика, ведущий которой – Менеджер по работе с сообществом (им уже долгое время является Павел Бужа) – освещает все важные новости, произошедшие в игре за прошедшую неделю, анонсирует события, отвечает на вопросы игроков, а также берёт интервью у приглашаемых гостей – членов команды разработчиков ГВИНТа, известных стримеров и др. Задать свой вопрос может любой желающий либо в твиттере Бужи, либо в группе Claymore под соответствующими постами.</p></div></article>
@@ -624,15 +665,19 @@
 <article class="term" id="tuman"><h3 class="term-title">Туман</h3><div class="term-body"><p>Туман (оф., англ. – fog) – эффект ряда (см. АоЕ). В начале хода игрока, на чьей стороне поля находится этот эффект, нанесите 2 ед. урона слабейшему отряду в этом ряду.</p></div></article>
 <article class="term" id="tutor"><h3 class="term-title">Тутор</h3><div class="term-body"><p>Тутор (разг., от англ. tutor – наставник) – карта, которая может достать (взять в руку, сыграть или призвать на стол) другую карту из колоды. Туторы помогают прокрутить колоду. Такое название закрепилось в английском языке в честь карты "Demonic Tutor" из ККИ Magic: The Gathering, имевшую подобный эффект.</p></div></article>
 </section>
-<section class="group" id="group-13" data-group="У–Я"><h2 class="group-title">У–Я</h2>
+<section class="group" id="letter-u" data-letter="У"><h2 class="group-title">У</h2>
 <article class="term" id="udalit"><h3 class="term-title">Удалить</h3><div class="term-body"><p>Удалить (оф., англ. banish – изгнать) – убрать карту из игры. Важное отличие от обычного уничтожения состоит в том, что при удалении карта сразу полностью убирается из игры и не попадает в сброс. Это следует учитывать, так как у удалённых карт не срабатывают многие способности и статусы, активирующиеся при уничтожении (например, способность "Завещание" или статус "Награда за голову").</p></div></article>
 <article class="term" id="unichtozhit"><h3 class="term-title">Уничтожить</h3><div class="term-body"><p>Уничтожить (оф., англ. destroy – уничтожать) – переместить отряд/артефакт в сброс в результате непосредственного воздействия на него на игровом поле. Отряд считается уничтоженным и уходит с поля боя в случае, если его сила, вследствие нанесённого урона (дамага), опускается до 0 или против него применяется карта с указанием "уничтожьте" с соблюдением условий уничтожения, если таковые имеются (например, карта "Геральт: Игни"). Карты артефактов уничтожает очень небольшое количество карт (например, "Лавк: охотник", разыгрываемый с карты "Выходной день Лавка") и в их описании всегда будет указана фраза: "уничтожьте артефакт". Следует помнить, что уничтожение и удаление – абсолютно разные механики, и это следует учитывать во время игры.</p></div></article>
 <article class="term" id="ustrashenie"><h3 class="term-title">Устрашение</h3><div class="term-body"><p>Устрашение (оф., англ. intimidate) – механика фракции "Синдикат". Отряд с ключевым словом "Устрашение" будет усиливаться на 1 (если не указано другое значение) каждый раз, когда владелец отряда играет особую карту с категорией "Преступление".</p></div></article>
+</section>
+<section class="group" id="letter-f" data-letter="Ф"><h2 class="group-title">Ф</h2>
 <article class="term" id="fiks"><h3 class="term-title">Фикс</h3><div class="term-body"><p>Фикс (разг., от англ. fix – починка) – исправление игровых ошибок – багов. Иногда ошибочно путается с понятием "нёрф".</p></div></article>
 <article class="term" id="filler"><h3 class="term-title">Филлер</h3><div class="term-body"><p>Филлер (разг., от англ. filler – наполнитель) – карта, почти не влияющая на эффективность колоды и добавленная в неё ровно для того, чтобы закрыть необходимый минимум в 25 карт. Обычно филлеры имеют минимально возможную стоимость найма – 4, и во время игры их стараются либо заменять в фазе муллигана, либо избавляться тогда, когда это можно сделать быстро и безболезненно (например, когда противник сделал пас и разрыв между игроком и оппонентом достаточно мал, чтобы филлер позволил выйти вперёд и забрать раунд, не тратя более ценные карты).</p></div></article>
 <article class="term" id="finisher"><h3 class="term-title">Финишер</h3><div class="term-body"><p>Фи́нишер (разг., от англ. finisher) – карта, имеющая большой потенциал и способная оказать решающее влияние на исход раунда. Для большего эффекта чаще всего играется последней – так называемый "ласт ход" или "ласт сей". Например, сыгранный ласт ходом "Геральт: Ирден" может отменить огромные значения усиления у всех отрядов в ряду противника, а "Коратская жара" может удалить очень сильный вражеский отряд оппонента.</p></div></article>
 <article class="term" id="fitilit"><h3 class="term-title">Фитилить</h3><div class="term-body"><p>Фитилить (разг., от англ. to rope) – использовать всё время, отведенное на ход. Иногда используется с целью деморализовать противника и считается плохим тоном (разновидностью БМ), если этим злоупотреблять. Синонимы: роупить.</p></div></article>
 <article class="term" id="fraktsiia"><h3 class="term-title">Фракция</h3><div class="term-body"><p>Фракция (оф., англ. fraction) – в ГВИНТе существуют 6 колодообразующих группировок со своим уникальным геймплеем: Нильфгаард, Королевства Севера, Скеллиге, Скоя’таэлли и Синдикат. У каждой фракции есть свои особенности, способности лидеров и стили игры. При формировании колод можно использовать только карты одной выбранной фракции + нейтральные. Существует так же несколько межфракционных карт, принадлежащих сразу двум фракциям. Например, "Вышибала Тесака" является одновременно и картой Скоя’таэлей и представителем фракции Синдикат. Узнать такие карты можно по особой двухцветной рамке в описании карты, как в примере ниже:</p></div></article>
+</section>
+<section class="group" id="letter-kh" data-letter="Х"><h2 class="group-title">Х</h2>
 <article class="term" id="khairoll"><h3 class="term-title">Хайролл</h3><div class="term-body"><p>Хайролл (разг., от англ. high roll – высокий крен) – термин, обозначающий в ГВИНТе ситуацию, когда из всех возможных n-вариантов игроку выпадает наилучший в данных условиях, при том, что вероятность выпадения именно этого варианта статистически очень мала. Обычно хайролл употребляется в случае розыгрыша карт, предлагающих игроку несколько случайных вариантов выбора. Например, карта "Имперская дипломатия" предлагает игроку выбрать и сыграть одну из трёх сгенерированных случайным образом бронзовых карт из фракции оппонента. Дипломатия может выдать три любые неповторяющиеся карты, однако, некоторые возможные варианты будут для игрока не очень полезны, тогда, как другие могли бы, в теории, обеспечить преимущество в его ситуации. В случае, если игроку "повезёт", и ему выпадет именно такой наилучший вариант, то в этом случае можно говорить о хайролле. Обычно хайролл воспринимается как очень благоприятное для игрока явление, так как таким образом можно добиться максимальных успехов при минимальной затрате сил.</p></div></article>
 <article class="term" id="khishchnik"><h3 class="term-title">Хищник</h3><div class="term-body"><p class="empty">Определение пока не добавлено.</p></div></article>
 <article class="term" id="khodov-do-vosstanovleniia"><h3 class="term-title">Ходов до восстановления</h3><div class="term-body"><p>Ходов до восстановления (оф., англ. cooldown – перезарядка) – число ходов, через которое снова станет доступен Приказ или Платёж. "Ходов до восстановления 1" означает, что использование Приказа или Платежа будет доступно уже на следующий ход. Синонимы: кулдаун, КД.</p></div></article>
@@ -640,20 +685,34 @@
 <figure class="term-figure caption-only"><figcaption>Хоумкаминг – логотип обновления</figcaption></figure></div></article>
 <article class="term" id="khendbaff"><h3 class="term-title">Хэндбафф</h3><div class="term-body"><p>Хэндбафф (разг., от англ. handbuff – буквально "бафф руки", т.е усиление руки) – может употребляться в двух вариантах.</p>
 <ol><li>Название уникального архетипа (в значении 2) фракции Скоя’таэли на способности лидера "Бодрость", основной стратегией которого является усиление отрядов в руке. Забафф может достигаться: применением специальных отрядов, что, находясь на поле, постоянно усиливают отряды в руке (Дунка); отрядов, копирующих или иным образом увеличивающих значения усилений (Торкве); особых карт, также влияющих на параметры силы отрядов в руке (Круг жизни) и т.д.</li><li>Неофициальное название механики усиления карт в руке – разновидности керриовера. Карты, получившие в руке забафф в течение раунда переносят значение своего усиления в следующие раунды (при этом не имеет значения, находятся они в руке или колоде) и могут быть усилены повторно. В случае если выставленный на поле ранее забафанный отряд попадёт в сброс, то он потеряет все свои усиления.</li></ol></div></article>
+</section>
+<section class="group" id="letter-ts" data-letter="Ц"><h2 class="group-title">Ц</h2>
 <article class="term" id="tsvet-karty"><h3 class="term-title">Цвет карты</h3><div class="term-body"><p>Цвет карты – иначе говоря, цвет рамки карты. Он может быть бронзовым или золотым – соответственно, в игре есть Бронзовые и Золотые карты. Во времена ЗБТ/ОБТ в игре присутствовали также Серебряные карты, однако, впоследствии серебряный цвет был удалён из игры. Цвет карт играет определённую роль при составлении колоды. Бронза, как правило составляет примерно 2/3 от общего числа карт. Обычно это относительно слабые и менее ценные карты в пределах провизии от 4 до 6. По своей редкости Бронза может быть Обычной и Эпической. Кроме того, в каждую колоду можно взять по две копии одной бронзовой карты. Золото составляет зачастую примерно 1/3 от общего числа карт в колоде и включает в себя более ценные и сильные Эпические и Легендарные карты в пределах от 4 до 15 провизии. В колоду можно взять только одну копию одной золотой карты.</p></div></article>
 <article class="term" id="tsena-mogushchestva"><h3 class="term-title">Цена Могущества</h3><div class="term-body"><p>Цена Могущества (оф., англ. Price Of Power) – общее название комплекта дополнений, выходящее с июня по октябрь 2021 года, и посвящённое магам и охотникам за колдунами. В отличие от предыдущих дополнений, это было разделено на три части по 26 карт, выходящие каждые 2 месяца. Первая часть называется "Пылающий костёр", вторая часть – "Танеддский бунт", третья – "Горькие плоды". Дополнение привнесло в игру такие механики, как Терпение и Шабаш.</p>
 <figure class="term-figure caption-only"><figcaption>Цена Могущества – логотип дополнения</figcaption></figure></div></article>
+</section>
+<section class="group" id="letter-ch" data-letter="Ч"><h2 class="group-title">Ч</h2>
 <article class="term" id="chellendzher"><h3 class="term-title">Челленджер</h3><div class="term-body"><p>Челленджер (оф., англ. полное название: Gwent Challenger) – до современной турнирной системы большие турниры, организуемые CDPR, назывались именно так. Ныне на смену Челленджеру пришёл Gwent Masters (Мастерс).</p></div></article>
+</section>
+<section class="group" id="letter-sh" data-letter="Ш"><h2 class="group-title">Ш</h2>
 <article class="term" id="shabash"><h3 class="term-title">Шабаш</h3><div class="term-body"><p>Шабаш (оф., англ. sabbath) – уникальная способность фракции Чудовища. Активируется, если общая сила отрядов хотя бы в одном из дружественных рядов не менее 25 единиц.</p></div></article>
-<article class="term" id="shnuroder"><h3 class="term-title">Шнуродёр</h3><div class="term-body"><p>Шнуродёр (разг.) – означает игрока, досрочно завершающего партию полным закрытием приложения "ГВИНТ" прямо во время матча. Шнуродёрство является разновидностью БМ и большим неуважением к оппоненту, так как последнему приходится ещё какое-то время находиться в игре, дожидаясь, когда партия будет завершена автоматически в его пользу из-за разрыва сети. Следует помнить, что намеренное завершение партии "дёрганьем шнура" (иногда можно также услышать синоним "дёрнуть провод") засчитывается как поражение для игрока, покинувшего матч, и как победа для игрока, оставшегося в игре. Чаще всего шнуродёрство встречается среди пользователей мобильных платформ, где закрыть приложение ГВИНТа несколько легче и быстрее, чем на ПК. Если вы по каким-то причинам готовы признать своё поражение, то единственным разумным приличным способом сделать это является консид – т.е. выход из игры нажатием на кнопку "сдаться".</p>
+<article class="term" id="shnurodyor"><h3 class="term-title">Шнуродёр</h3><div class="term-body"><p>Шнуродёр (разг.) – означает игрока, досрочно завершающего партию полным закрытием приложения "ГВИНТ" прямо во время матча. Шнуродёрство является разновидностью БМ и большим неуважением к оппоненту, так как последнему приходится ещё какое-то время находиться в игре, дожидаясь, когда партия будет завершена автоматически в его пользу из-за разрыва сети. Следует помнить, что намеренное завершение партии "дёрганьем шнура" (иногда можно также услышать синоним "дёрнуть провод") засчитывается как поражение для игрока, покинувшего матч, и как победа для игрока, оставшегося в игре. Чаще всего шнуродёрство встречается среди пользователей мобильных платформ, где закрыть приложение ГВИНТа несколько легче и быстрее, чем на ПК. Если вы по каким-то причинам готовы признать своё поражение, то единственным разумным приличным способом сделать это является консид – т.е. выход из игры нажатием на кнопку "сдаться".</p>
 <figure class="term-figure caption-only"><figcaption>В большинстве случаев разрывы соединения происходят вовсе не из-за "нестабильного интернета"...</figcaption></figure></div></article>
 <article class="term" id="shpion"><h3 class="term-title">Шпион</h3><div class="term-body"><p>Шпион (оф., англ. spying) – статус, добавляемый отрядам, сыгранным, призванным или созданным игроком на стороне противника. Отряд с этим статусом является целью под способность "Заговор".</p>
 <figure class="term-figure caption-only"><figcaption>Символ Шпиона в ГВИНТе</figcaption></figure></div></article>
 <article class="term" id="shtorm"><h3 class="term-title">Шторм</h3><div class="term-body"><p>Шторм (оф., англ. storm) – эффект ряда (см. АоЕ). В начале хода игрока, на чьей стороне поля находится этот эффект, нанесите по 1 ед. урона всем отрядам в этом ряду.</p></div></article>
+</section>
+<section class="group" id="letter-shch" data-letter="Щ"><h2 class="group-title">Щ</h2>
 <article class="term" id="shchit"><h3 class="term-title">Щит</h3><div class="term-body"><p>Щит (оф., англ. shield) – отряд с этим статусом не получит урон в следующий раз, когда должен будет это сделать, независимо от величины урона. Однако карты, наносящие по единице урона несколько раз подряд (например, особая карта "Отвар из Гигаскорпиона") нанесут весь урон, за исключением первого удара. Механика щитов впервые введена в игру с дополнением "Алое Проклятие".</p>
 <figure class="term-figure caption-only"><figcaption>Символ Щита в ГВИНТе</figcaption></figure></div></article>
+</section>
+<section class="group" id="letter-e-2" data-letter="Э"><h2 class="group-title">Э</h2>
 <article class="term" id="ekho"><h3 class="term-title">Эхо</h3><div class="term-body"><p>Эхо (оф., англ. echo) – способность некоторых особых карт, позволяющая сыграть данный спелл дважды за игру. Если в одном из раундов карта с эхом была разыграна из руки, то в начале следующего раунда (перед фазой добора карт) она автоматически перемещается из сброса на верх вашей колоды и получает статус "обречённость". Следует помнить, что удаление карты со способностью "эхо" из сброса после её первого розыгрыша не позволит разыграть её вновь в следующем раунде. Карты эха были впервые введены в игру с дополнением "Господин Зеркало".</p></div></article>
+</section>
+<section class="group" id="letter-iu" data-letter="Ю"><h2 class="group-title">Ю</h2>
 <article class="term" id="iunit"><h3 class="term-title">Юнит</h3><div class="term-body"><p>Юнит (разг., от англ. unit – единица) – см. отряд.</p></div></article>
+</section>
+<section class="group" id="letter-ia" data-letter="Я"><h2 class="group-title">Я</h2>
 <article class="term" id="iad"><h3 class="term-title">Яд</h3><div class="term-body"><p>Яд (оф., англ. poison) – негативный статус. Если отряд получает два таких статуса, то он уничтожается. Механика ядов была впервые введена в игру с дополнением "Алое Проклятие".</p>
 <figure class="term-figure caption-only"><figcaption>Символ Яда в ГВИНТе</figcaption></figure></div></article>
 </section>

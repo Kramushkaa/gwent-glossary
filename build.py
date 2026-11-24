@@ -18,25 +18,22 @@ ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "raw"
 IMG_DIR = ROOT / "assets" / "img"
 
-# Letter ranges used by the original wiki pagination.
-GROUPS = {
-    1: "А",
-    2: "Б",
-    3: "В–Г",
-    4: "Д",
-    5: "Е–И",
-    6: "К",
-    7: "Л–М",
-    8: "Н–О",
-    9: "П",
-    10: "Р",
-    11: "С",
-    12: "Т",
-    13: "У–Я",
+# Source wiki pages, kept only for provenance of each term.
+SOURCE_PAGES = range(1, 14)
+
+# Russian alphabet order, used to order the letter sections.
+LETTER_ORDER = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+
+# Latin letters that look like Cyrillic ones are folded into the Cyrillic
+# letter, so that "AoE (Area of Effect)" lands in "А" like it did in the
+# original wiki table of contents.
+LOOKALIKE = {
+    "a": "а", "b": "в", "c": "с", "e": "е", "h": "н", "k": "к", "m": "м",
+    "o": "о", "p": "р", "t": "т", "x": "х", "y": "у",
 }
 
 TRANSLIT = {
-    "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "e",
+    "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "yo",
     "ж": "zh", "з": "z", "и": "i", "й": "i", "к": "k", "л": "l", "м": "m",
     "н": "n", "о": "o", "п": "p", "р": "r", "с": "s", "т": "t", "у": "u",
     "ф": "f", "х": "kh", "ц": "ts", "ч": "ch", "ш": "sh", "щ": "shch",
@@ -94,6 +91,27 @@ def slugify(text: str) -> str:
     return slug or "term"
 
 
+def letter_of(title: str) -> str:
+    """Section letter for a term: first letter, folded to Cyrillic."""
+    for ch in title:
+        if ch.isalnum():
+            low = ch.lower()
+            return LOOKALIKE.get(low, low).upper()
+    return "#"
+
+
+def sort_key(title: str) -> str:
+    """Alphabetical key: case-insensitive, ё sorts as е, lookalikes folded."""
+    return norm_key(title).replace("ё", "е")
+
+
+def letter_rank(letter: str) -> int:
+    try:
+        return LETTER_ORDER.index(letter)
+    except ValueError:
+        return len(LETTER_ORDER)
+
+
 def esc(text: str) -> str:
     return html.escape(text, quote=False)
 
@@ -108,7 +126,7 @@ class Context:
 
     def resolve(self, target: str, label: str) -> tuple[str | None, str]:
         term = ALIASES.get(target.strip().lower(), target.strip())
-        slug = INDEX.resolve(term, self.page)
+        slug = INDEX.resolve(term)
         if slug is None:
             self.unresolved.add(f"{term}  (page {self.page}, label {label!r})")
         return slug, term
@@ -118,26 +136,15 @@ class Index:
     def __init__(self) -> None:
         self.by_title: dict[str, str] = {}
         self.by_key: dict[str, str] = {}
-        self.by_page: dict[int, dict[str, str]] = {}
-        self.by_page_key: dict[int, dict[str, str]] = {}
 
-    def add(self, page: int, title: str, slug: str) -> None:
+    def add(self, title: str, slug: str) -> None:
         self.by_title.setdefault(title, slug)
         self.by_key.setdefault(norm_key(title), slug)
-        self.by_page.setdefault(page, {})[title] = slug
-        self.by_page_key.setdefault(page, {})[norm_key(title)] = slug
 
-    def resolve(self, term: str, page: int) -> str | None:
-        if term in self.by_page.get(page, {}):
-            return self.by_page[page][term]
+    def resolve(self, term: str) -> str | None:
         if term in self.by_title:
             return self.by_title[term]
-        key = norm_key(term)
-        if key in self.by_page_key.get(page, {}):
-            return self.by_page_key[page][key]
-        if key in self.by_key:
-            return self.by_key[key]
-        return None
+        return self.by_key.get(norm_key(term))
 
 
 INDEX = Index()
@@ -158,24 +165,12 @@ def wikilink(target: str, label: str, ctx: Context) -> str:
         _, term = target.split("#", 1)
         slug, _ = ctx.resolve(term, label)
     else:
-        # link to another wiki page: point at the matching letter group
-        page = page_from_name(target)
-        if page is None:
-            return esc(label)
-        return f'<a href="#group-{page}">{esc(label)}</a>'
+        # navigation link to another wiki page: those sections no longer exist
+        return esc(label)
 
     if slug is None:
         return f'<span class="broken" title="Ссылка не разрешена">{esc(label)}</span>'
     return f'<a href="#{slug}">{esc(label)}</a>'
-
-
-def page_from_name(name: str) -> int | None:
-    match = re.search(r"Страница[\s_]*(\d+)", name, re.I)
-    if match:
-        return int(match.group(1))
-    if name.strip().lower().startswith("глоссарий"):
-        return 1
-    return None
 
 
 def image_html(photo_id: str, size: str, inline: bool = False) -> str:
@@ -370,52 +365,74 @@ def assign_slugs(terms: list[dict]) -> None:
         count = seen.get(base, 0) + 1
         seen[base] = count
         term["slug"] = base if count == 1 else f"{base}-{count}"
-        INDEX.add(term["page"], term["title"], term["slug"])
+        INDEX.add(term["title"], term["slug"])
 
 
-def render_toc(terms: list[dict]) -> str:
-    parts = ['<nav class="toc" aria-label="Оглавление">']
-    parts.append('<p class="toc-title">Оглавление</p>')
-    current = None
+def group_by_letter(terms: list[dict]) -> list[dict]:
+    """Split the sorted terms into one section per first letter."""
+    groups: list[dict] = []
+    used: dict[str, int] = {}
     for term in terms:
-        if term["group"] != current:
-            if current is not None:
-                parts.append("</ul></div>")
-            current = term["group"]
-            parts.append(
-                f'<div class="toc-group" data-group="{esc(current)}">'
-                f'<p class="toc-letter">{esc(current)}</p><ul>'
-            )
+        letter = letter_of(term["title"])
+        if not groups or groups[-1]["letter"] != letter:
+            base = slugify(letter) or "letter"
+            count = used.get(base, 0) + 1
+            used[base] = count
+            anchor = f"letter-{base}" if count == 1 else f"letter-{base}-{count}"
+            groups.append({"letter": letter, "anchor": anchor, "terms": []})
+        term["letter"] = letter
+        term["anchor"] = groups[-1]["anchor"]
+        groups[-1]["terms"].append(term)
+    return groups
+
+
+def plural(count: int, one: str, few: str, many: str) -> str:
+    if count % 10 == 1 and count % 100 != 11:
+        return one
+    if 2 <= count % 10 <= 4 and not 12 <= count % 100 <= 14:
+        return few
+    return many
+
+
+def render_toc(groups: list[dict]) -> str:
+    parts = ['<nav class="toc" aria-label="Алфавитный указатель">']
+    parts.append('<p class="toc-title">Указатель</p>')
+    for group in groups:
         parts.append(
-            f'<li><a href="#{term["slug"]}" data-slug="{term["slug"]}">'
-            f'{esc(term["title"])}</a></li>'
+            f'<div class="toc-group" data-letter="{esc(group["letter"])}">'
+            f'<p class="toc-letter">'
+            f'<a href="#{group["anchor"]}">{esc(group["letter"])}</a></p><ul>'
         )
-    parts.append("</ul></div>")
+        for term in group["terms"]:
+            parts.append(
+                f'<li><a href="#{term["slug"]}" data-slug="{term["slug"]}">'
+                f'{esc(term["title"])}</a></li>'
+            )
+        parts.append("</ul></div>")
     parts.append("</nav>")
     return "\n".join(parts)
 
 
-def render_terms(terms: list[dict]) -> str:
+def render_terms(groups: list[dict]) -> str:
     parts: list[str] = []
-    current = None
-    for term in terms:
-        if term["group"] != current:
-            if current is not None:
-                parts.append("</section>")
-            current = term["group"]
-            parts.append(
-                f'<section class="group" id="group-{term["page"]}" '
-                f'data-group="{esc(current)}">'
-                f'<h2 class="group-title">{esc(current)}</h2>'
-            )
-        body = term["html"] or '<p class="empty">Определение пока не добавлено.</p>'
+    for group in groups:
         parts.append(
-            f'<article class="term" id="{term["slug"]}">'
-            f'<h3 class="term-title">{esc(term["title"])}</h3>'
-            f'<div class="term-body">{body}</div>'
-            f"</article>"
+            f'<section class="group" id="{group["anchor"]}" '
+            f'data-letter="{esc(group["letter"])}">'
+            f'<h2 class="group-title">{esc(group["letter"])}</h2>'
         )
-    parts.append("</section>")
+        for term in group["terms"]:
+            body = (
+                term["html"]
+                or '<p class="empty">Определение пока не добавлено.</p>'
+            )
+            parts.append(
+                f'<article class="term" id="{term["slug"]}">'
+                f'<h3 class="term-title">{esc(term["title"])}</h3>'
+                f'<div class="term-body">{body}</div>'
+                f"</article>"
+            )
+        parts.append("</section>")
     return "\n".join(parts)
 
 
@@ -437,9 +454,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <header class="topbar">
   <button class="toc-toggle" id="tocToggle" aria-controls="sidebar" aria-expanded="false">
     <span class="toc-toggle-bars" aria-hidden="true"></span>
-    <span class="toc-toggle-label">Оглавление</span>
-  </button>
-  <div class="search-wrap">
+    <span class="toc-toggle-label">Указатель</span>
+  </button>  <div class="search-wrap">
     <input type="search" id="search" placeholder="Поиск по термину или определению…"
            aria-label="Поиск по глоссарию" autocomplete="off" spellcheck="false">
     <button class="search-clear" id="searchClear" aria-label="Очистить поиск" hidden>×</button>
@@ -462,7 +478,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         Термины, игровые механики, архетипы и жаргон сообщества карточной игры GWENT.
         Собрано из вики-страниц сообщества Claymore во «ВКонтакте».
       </p>
-      <p class="meta">{count} терминов · {groups} разделов</p>
+      <p class="meta">{meta}</p>
     </header>
 
     {terms}
@@ -490,7 +506,7 @@ def main() -> None:
     all_terms: list[dict] = []
     abbreviations: list[str] = []
 
-    for page in sorted(GROUPS):
+    for page in SOURCE_PAGES:
         text = read_page(page)
         if not abbreviations:
             abbreviations = extract_abbreviations(text)
@@ -501,7 +517,8 @@ def main() -> None:
                     "title": title,
                     "slug": "",
                     "page": page,
-                    "group": GROUPS[page],
+                    "letter": "",
+                    "anchor": "",
                     "lines": lines,
                     "html": "",
                     "unresolved": [],
@@ -509,8 +526,11 @@ def main() -> None:
             )
         print(f"page {page:>2}: {len(entries):>2} терминов")
 
-    # pass 1 must be complete before links can be resolved
+    all_terms.sort(key=lambda t: (letter_rank(letter_of(t["title"])), sort_key(t["title"])))
+
+    # links can only be resolved once every term is known
     assign_slugs(all_terms)
+    groups = group_by_letter(all_terms)
 
     unresolved: set[str] = set()
     for term in all_terms:
@@ -524,6 +544,8 @@ def main() -> None:
         for item in sorted(unresolved):
             print("  -", item)
 
+    print("\nбуквы: " + ", ".join(f"{g['letter']} ({len(g['terms'])})" for g in groups))
+
     abbr_html = ""
     if abbreviations:
         abbr_html = (
@@ -531,12 +553,17 @@ def main() -> None:
             f"{render_blocks(abbreviations, Context(1))}</section>"
         )
 
+    meta = (
+        f"{len(all_terms)} "
+        f"{plural(len(all_terms), 'термин', 'термина', 'терминов')} · "
+        f"{len(groups)} {plural(len(groups), 'буква', 'буквы', 'букв')}"
+    )
+
     page = PAGE_TEMPLATE.format(
-        toc=render_toc(all_terms),
-        terms=render_terms(all_terms),
+        toc=render_toc(groups),
+        terms=render_terms(groups),
         abbr=abbr_html,
-        count=len(all_terms),
-        groups=len(GROUPS),
+        meta=meta,
     )
     (ROOT / "index.html").write_text(page, encoding="utf-8")
 
@@ -546,7 +573,7 @@ def main() -> None:
         {
             "title": term["title"],
             "slug": term["slug"],
-            "group": term["group"],
+            "letter": term["letter"],
             "page": term["page"],
             "html": term["html"],
         }
