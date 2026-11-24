@@ -455,7 +455,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <button class="toc-toggle" id="tocToggle" aria-controls="sidebar" aria-expanded="false">
     <span class="toc-toggle-bars" aria-hidden="true"></span>
     <span class="toc-toggle-label">Указатель</span>
-  </button>  <div class="search-wrap">
+  </button>
+  <div class="search-wrap">
     <input type="search" id="search" placeholder="Поиск по термину или определению…"
            aria-label="Поиск по глоссарию" autocomplete="off" spellcheck="false">
     <button class="search-clear" id="searchClear" aria-label="Очистить поиск" hidden>×</button>
@@ -473,12 +474,27 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
   <main class="content" id="content">
     <header class="page-head">
-      <h1>Глоссарий GWENT</h1>
-      <p class="lede">
-        Термины, игровые механики, архетипы и жаргон сообщества карточной игры GWENT.
-        Собрано из вики-страниц сообщества Claymore во «ВКонтакте».
-      </p>
-      <p class="meta">{meta}</p>
+      <div class="page-head-text">
+        <h1>Глоссарий GWENT</h1>
+        <p class="lede">
+          Термины, игровые механики, архетипы и жаргон сообщества карточной игры GWENT.
+          Собрано из вики-страниц сообщества Claymore во «ВКонтакте».
+        </p>
+        <p class="meta">{meta}</p>
+      </div>
+      <a class="watermark" href="https://vk.com/claymoregwent"
+         target="_blank" rel="noopener"
+         title="Claymore — сообщество GWENT во «ВКонтакте»">
+        <picture>
+          <source type="image/webp"
+                  srcset="assets/img/cm-watermark-160.webp 160w, assets/img/cm-watermark-320.webp 320w"
+                  sizes="112px">
+          <img src="assets/img/cm-watermark-320.png"
+               srcset="assets/img/cm-watermark-160.png 160w, assets/img/cm-watermark-320.png 320w"
+               sizes="112px" width="112" height="112"
+               alt="Claymore" loading="lazy" decoding="async">
+        </picture>
+      </a>
     </header>
 
     {terms}
@@ -488,7 +504,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <footer class="page-foot">
       <p>
         Источник: вики-страницы сообщества
-        <a class="ext" href="https://vk.com/club154778374">Claymore</a> во «ВКонтакте».
+        <a class="ext" href="https://vk.com/claymoregwent">Claymore</a> во «ВКонтакте».
         Материал сохранён в открытом виде, так как раздел вики-страниц ВКонтакте
         прекращает работу 4 декабря 2025 года.
       </p>
@@ -553,11 +569,7 @@ def main() -> None:
             f"{render_blocks(abbreviations, Context(1))}</section>"
         )
 
-    meta = (
-        f"{len(all_terms)} "
-        f"{plural(len(all_terms), 'термин', 'термина', 'терминов')} · "
-        f"{len(groups)} {plural(len(groups), 'буква', 'буквы', 'букв')}"
-    )
+    meta = f"{len(all_terms)} {plural(len(all_terms), 'термин', 'термина', 'терминов')}"
 
     page = PAGE_TEMPLATE.format(
         toc=render_toc(groups),

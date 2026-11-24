@@ -14,11 +14,24 @@
 ```
 index.html            готовая страница (генерируется, руками не правим)
 assets/style.css      оформление
-assets/app.js         поиск, оглавление, переключение темы
+assets/app.js         поиск, указатель, переключение темы
 assets/fonts/         шрифт GWENT ExtraBold для заголовков (woff2)
+assets/img/           логотип Claymore и (в будущем) иллюстрации терминов
+assets/src/           исходники изображений в полном размере
 data/glossary.json    те же данные в машиночитаемом виде
 raw/page_1..13.txt    исходные вики-страницы ВКонтакте, как они были сохранены
 build.py              сборка index.html и data/glossary.json из raw/
+```
+
+## Логотип
+
+В шапке страницы стоит логотип Claymore (`assets/img/cm-watermark-*.png|webp`),
+он ведёт на [vk.com/claymoregwent](https://vk.com/claymoregwent). Исходник
+3500×3500 лежит в `assets/src/cm-watermark-original.png`; рабочие размеры
+160 и 320 px пересобираются из него через Pillow:
+
+```bash
+python -c "from PIL import Image; im = Image.open('assets/src/cm-watermark-original.png'); [im.resize((s, s), Image.LANCZOS).save(f'assets/img/cm-watermark-{s}.{e}', **({'quality': 90, 'method': 6} if e == 'webp' else {'optimize': True})) for s in (160, 320) for e in ('png', 'webp')]"
 ```
 
 ## Шрифт
