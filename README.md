@@ -23,7 +23,7 @@ raw/page_1..13.txt    исходные вики-страницы ВКонтак�
 build.py              сборка index.html и data/glossary.json из raw/
 ```
 
-## Логотип
+## Логотип и ссылки на сообщество
 
 В шапке страницы стоит логотип Claymore (`assets/img/cm-watermark-*.png|webp`),
 он ведёт на [vk.com/claymoregwent](https://vk.com/claymoregwent). Исходник
@@ -33,6 +33,17 @@ build.py              сборка index.html и data/glossary.json из raw/
 ```bash
 python -c "from PIL import Image; im = Image.open('assets/src/cm-watermark-original.png'); [im.resize((s, s), Image.LANCZOS).save(f'assets/img/cm-watermark-{s}.{e}', **({'quality': 90, 'method': 6} if e == 'webp' else {'optimize': True})) for s in (160, 320) for e in ('png', 'webp')]"
 ```
+
+Сборщик сам расставляет ссылки на сообщество в текстах терминов:
+
+- любое упоминание `Claymore` или `claymoregwent` становится ссылкой на группу;
+- тег вида `#rewardtree@claymoregwent` ведёт на поиск по этому тегу внутри
+  группы: `https://vk.com/claymoregwent?q=%23rewardtree`;
+- ссылки вида `[[club154778374|…]]` из старой разметки тоже перенаправляются
+  на группу.
+
+Ссылки не вкладываются друг в друга: текст внутри уже готового `<a>` повторно
+не обрабатывается.
 
 ## Шрифт
 

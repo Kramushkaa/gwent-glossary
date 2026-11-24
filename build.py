@@ -58,6 +58,14 @@ ALIASES = {
     "винкон": "Винкондишен (винкон)",
 }
 
+# Community the glossary was taken from.
+GROUP_URL = "https://vk.com/claymoregwent"
+
+# "#rewardtree@claymoregwent" -> search inside the community by that hashtag.
+HASHTAG_RE = re.compile(r"#([0-9A-Za-z_]+)@claymoregwent\b")
+# Bare mentions of the community name in running text.
+MENTION_RE = re.compile(r"(?<![\w@/.-])(?:claymoregwent|claymore)\b", re.I)
+
 
 # --------------------------------------------------------------------------- #
 # helpers
@@ -157,7 +165,10 @@ def wikilink(target: str, label: str, ctx: Context) -> str:
     if target.startswith("page-") or target.startswith("@") or re.fullmatch(
         r"(?:club|public|id)\d+", target
     ):
-        return f'<a class="ext" href="https://vk.com/{esc(target)}">{esc(label)}</a>'
+        href = GROUP_URL if re.fullmatch(r"(?:club|public|id)\d+", target) else (
+            f"https://vk.com/{target}"
+        )
+        return f'<a class="ext" href="{esc(href)}">{esc(label)}</a>'
 
     if target.startswith("#"):
         slug, _ = ctx.resolve(target[1:], label)
@@ -171,6 +182,41 @@ def wikilink(target: str, label: str, ctx: Context) -> str:
     if slug is None:
         return f'<span class="broken" title="Ссылка не разрешена">{esc(label)}</span>'
     return f'<a href="#{slug}">{esc(label)}</a>'
+
+
+def link_text_nodes(fragment: str) -> str:
+    """Turn community mentions into links, skipping text inside <a> elements."""
+    out: list[str] = []
+    depth_a = 0
+    pos = 0
+    for match in re.finditer(r"<[^>]*>", fragment):
+        chunk = fragment[pos : match.start()]
+        out.append(chunk if depth_a else link_mentions(chunk))
+        tag = match.group(0)
+        out.append(tag)
+        if tag.startswith("<a"):
+            depth_a += 1
+        elif tag.startswith("</a"):
+            depth_a = max(0, depth_a - 1)
+        pos = match.end()
+    tail = fragment[pos:]
+    out.append(tail if depth_a else link_mentions(tail))
+    return "".join(out)
+
+
+def link_mentions(text: str) -> str:
+    # bare names first: the lookbehind keeps "…@claymoregwent" and URLs intact
+    text = MENTION_RE.sub(
+        lambda m: f'<a class="ext mention" href="{GROUP_URL}">{m.group(0)}</a>', text
+    )
+    text = HASHTAG_RE.sub(
+        lambda m: (
+            f'<a class="ext mention" href="{GROUP_URL}?q=%23{m.group(1)}">'
+            f"{m.group(0)}</a>"
+        ),
+        text,
+    )
+    return text
 
 
 def image_html(photo_id: str, size: str, inline: bool = False) -> str:
@@ -224,6 +270,7 @@ def inline(text: str, ctx: Context) -> str:
         text,
     )
     text = re.sub(r"\x00(\d+)\x00", lambda m: keep[int(m.group(1))], text)
+    text = link_text_nodes(text)
     return re.sub(r"\s{2,}", " ", text).strip()
 
 
@@ -478,7 +525,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         <h1>Глоссарий GWENT</h1>
         <p class="lede">
           Термины, игровые механики, архетипы и жаргон сообщества карточной игры GWENT.
-          Собрано из вики-страниц сообщества Claymore во «ВКонтакте».
+          Собрано из вики-страниц сообщества
+          <a class="ext" href="{group_url}">Claymore</a> во «ВКонтакте».
         </p>
         <p class="meta">{meta}</p>
       </div>
@@ -504,7 +552,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <footer class="page-foot">
       <p>
         Источник: вики-страницы сообщества
-        <a class="ext" href="https://vk.com/claymoregwent">Claymore</a> во «ВКонтакте».
+        <a class="ext" href="{group_url}">Claymore</a> во «ВКонтакте».
         Материал сохранён в открытом виде, так как раздел вики-страниц ВКонтакте
         прекращает работу 4 декабря 2025 года.
       </p>
@@ -576,6 +624,7 @@ def main() -> None:
         terms=render_terms(groups),
         abbr=abbr_html,
         meta=meta,
+        group_url=GROUP_URL,
     )
     (ROOT / "index.html").write_text(page, encoding="utf-8")
 
