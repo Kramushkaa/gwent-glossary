@@ -427,6 +427,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <title>Глоссарий GWENT</title>
 <meta name="description" content="Словарь терминов, механик и жаргона карточной игры GWENT.">
 <meta name="color-scheme" content="dark light">
+<link rel="preload" href="assets/fonts/gwent-extrabold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
 </head>

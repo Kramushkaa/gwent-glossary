@@ -11,12 +11,23 @@ HTML, CSS и JavaScript, поэтому сайт работает на GitHub Pa
 ## Что внутри
 
 ```
+```
 index.html            готовая страница (генерируется, руками не правим)
 assets/style.css      оформление
 assets/app.js         поиск, оглавление, переключение темы
+assets/fonts/         шрифт GWENT ExtraBold для заголовков (woff2)
 data/glossary.json    те же данные в машиночитаемом виде
 raw/page_1..13.txt    исходные вики-страницы ВКонтакте, как они были сохранены
 build.py              сборка index.html и data/glossary.json из raw/
+```
+
+## Шрифт
+
+Заголовки набраны шрифтом **GWENT ExtraBold** (© CD PROJEKT Red, Nicolai Gogoll,
+см. `gwent/COPYRIGHT.txt`). В `assets/fonts/` лежит сконвертированная версия в
+WOFF2 — 37 КБ вместо 114 КБ исходного TTF, с полным набором кириллицы. Если
+нужен другой начерт, положите файл в `gwent/`, сконвертируйте его в WOFF2 и
+поправьте `@font-face` в начале `assets/style.css`.
 ```
 
 ## Пересборка
